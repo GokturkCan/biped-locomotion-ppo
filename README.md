@@ -62,21 +62,13 @@ experiments are documented as research evidence rather than shipped as duplicate
 ## RL/control architecture
 
 ```mermaid
-flowchart TD
-    OBS["Actor observation: 57 values"] --> ACT["PPO actor: Gaussian distribution"]
-    ACT --> A["12-D bounded residual position action"]
-    A --> TARGET["Settled reference + fixed residual scale; joint-bound clipping"]
-    TARGET --> PD["Affine-PD actuation"]
-    PD --> SIM["MuJoCo / MJX"]
-    SIM --> STATE["Contacts and state"]
-    STATE --> OBS
-    STATE --> EVENT["Gait events / FSM and reward"]
-    STATE --> PRIV["Privileged critic observation: 82 values"]
-    PRIV --> CRITIC["Value network"]
-    EVENT --> PPO["PPO update during training"]
-    CRITIC --> PPO
-    PPO -.-> ACT
-    PPO -.-> CRITIC
+flowchart LR
+    O["Observation<br/>57 actor values"] --> A["Actor<br/>12-D residual action"]
+    A --> C["Position target<br/>and affine PD"] --> S["MuJoCo / MJX"]
+    S --> O
+    S --> V["Events, reward<br/>and critic: 82 values"]
+    V --> U["PPO update"] -.-> A
+    U -.-> V
 ```
 
 Simulation, mappings, references, bounds and gains enter through an external authorized
@@ -88,7 +80,7 @@ For the **active canonical V24 path**:
 
 $$
  a_t\in[-1,1]^{12},\qquad
- q_{\mathrm{target}}=\operatorname{clip}
+ q_{\mathrm{target}}=\mathrm{clip}
  \left(q_{\mathrm{settled}}+s\odot a_t,\ q_{\min},\ q_{\max}\right).
 $$
 
@@ -141,10 +133,10 @@ change as a completed step:
 
 ```mermaid
 flowchart LR
-    W["Weight shift"] --> U["Unloading"] --> L["Liftoff"]
-    L --> A["Airborne swing"] --> S["Actual single support"]
-    S --> T["Touchdown"] --> LA["Load acceptance"]
-    LA --> ST["Support transfer"] --> O["Opposite-side transition"] --> C["Completed step"]
+    A["Weight shift → unloading<br/>→ liftoff"]
+    B["Airborne swing → actual single support<br/>→ touchdown"]
+    C["Load acceptance → support transfer<br/>→ opposite side → completed step"]
+    A --> B --> C
 ```
 
 Debounce and event qualification distinguish brief contact changes from meaningful support
@@ -157,11 +149,10 @@ is unreachable on the active V24 path, and its stale coefficient is zero in this
 
 ```mermaid
 flowchart LR
-    V13["V13: task progress and slip"] --> V16["V16: completed-step credit"]
-    V16 --> V17["V17: accessible quality target"]
-    V17 --> V18["V18: event-synchronized timing"]
-    V18 --> V19["V19–V23: drag, placement, heading and command-frame consistency"]
-    V19 --> V24["V24: bilateral/path memory and long-horizon forward evaluation"]
+    V13["V13<br/>Progress / slip"] --> V16["V16<br/>Step credit"]
+    V16 --> V17["V17<br/>Quality target"] --> V18["V18<br/>Event timing"]
+    V18 --> V19["V19–V23<br/>Drag / placement / frames"]
+    V19 --> V24["V24<br/>Bilateral / path memory"]
 ```
 
 The full research sequence is V13 → V16 → V17 → V18 → V19 → V20 → V21 → V22 → V23 → V24.
@@ -253,14 +244,14 @@ policy inference → residual joint-position command.**
 
 ```mermaid
 flowchart LR
-    A["PPO / JAX"] --> B["ONNX export"] --> C["ONNX Runtime C++"]
-    J["Joystick command"] --> O["Observation assembly"] --> C
-    C --> R["Residual joint-position command"] --> S["MuJoCo step"] --> O
+    E["JAX/PPO<br/>ONNX export"] --> I["ONNX Runtime C++<br/>Policy inference"]
+    J["Joystick"] --> O["Observation<br/>assembly"] --> I
+    I --> T["Residual<br/>position targets"]
 ```
 
 - **Included:** the 50 Hz C++ runtime (observation assembly, gait event machine, contact/GRF extraction,
   action→target law, ONNX Runtime wrapper, SDL2 joystick, telemetry, artifact hash check), the ONNX export
-  code and a NumPy reference, and synthetic-data tests (15 CTest entries locally; an ONNX-free subset in CI).
+  code and a NumPy reference, and synthetic-data tests (the available subset depends on installed dependencies).
 - **Not included:** the trained ONNX weights and checkpoint, the robot model, and all robot-specific values.
   These enter through an external runtime-bindings JSON, so the deployment software can be inspected, built and
   tested without the restricted robot. It is simulation/runtime integration; **no hardware deployment is claimed.**

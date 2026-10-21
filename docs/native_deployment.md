@@ -13,22 +13,16 @@ JAX training stack and runs in a native C++ control loop with joystick input. Co
 
 ```mermaid
 flowchart LR
-    A["PPO / JAX training (Brax)"] --> B["Checkpoint (authorized, external)"]
-    B --> C["tools/export_onnx.py: deterministic actor to ONNX"]
-    C --> D["actor.onnx + EXPORT_MANIFEST.json (sha256)"]
-    subgraph RT["biped_v24_native (C++17, 50 Hz)"]
-        G["Joystick vx command"] --> O["Observation assembly (57 values)"]
-        E["Event machine: gait phase, expected side, bilateral memory"] --> O
-        O --> P["ONNX Runtime CPU inference"]
-        P --> T["Residual joint-position targets"]
-        T --> S["MuJoCo, 10 substeps per tick"]
-        S --> E
-        S --> O
-    end
-    D --> P
-    X["Runtime bindings JSON + model (external)"] --> O
-    X --> T
+    C["Authorized<br/>checkpoint"] --> E["ONNX export<br/>and hash manifest"]
+    E --> P["ONNX Runtime C++<br/>Policy inference"]
+    J["Joystick"] --> O["Observation<br/>57 values"] --> P
+    P --> T["Residual targets<br/>and affine PD"] --> S["MuJoCo"]
+    S --> O
 ```
+
+External model and bindings supply robot-specific data. The runtime event machine updates
+phase, expected side and bilateral memory; no model, trained weights or filled bindings
+are included in this release.
 
 ## 1. Export (`tools/export_onnx.py`)
 
@@ -46,9 +40,10 @@ authorized user; none is distributed. A NumPy reference forward pass
 testable without any trained weights.
 
 *Parity.* The exporter compares ONNX Runtime with the NumPy reference on random inputs
-(`--parity-samples`). In the author's private check of the real checkpoint, ONNX Runtime agreed with
-the JAX policy to a max absolute action difference of order 1e-7 against a 1e-5 tolerance; that
-result concerns the private weights and is not reproducible from this repository.
+(`--parity-samples`). JAX and ONNX outputs agreed within the validation tolerance used during
+private parity testing. This is author-reported: no numerical JAX-versus-ONNX test receipt is
+retained in this release. Private parity cannot be reproduced without authorized artifacts;
+public synthetic tests compare ONNX Runtime with the NumPy reference, not the private JAX actor.
 
 ## 2. Runtime contract
 
@@ -100,15 +95,18 @@ has been exercised in tests; behaviour with physical hardware is unverified.
 * Deadlines: every tick is timed; missed deadlines are counted in `summary.json`.
 * This is simulation safety logic only. There is no actuator-limit watchdog, e-stop or hardware interface.
 
-## 6. What was verified
+## 6. Software verification scope
+
+The local results below describe the native-recovery checks. They validate software on
+synthetic data, not trained-policy behavior on the restricted robot. The final public-readiness
+pass runs only the available short contract subset and reports its actual results separately.
 
 | Claim | Evidence | Where |
 |---|---|---|
 | Runtime compiles and 15 CTest entries pass on synthetic data | `ctest` | local; ONNX-free subset configured in CI |
 | ONNX Runtime output equals a NumPy reference (synthetic weights) | `test_onnx_actor`, `test_onnx_export.py` | local |
-| Observation layout and formulas, control law, hash refusal, bindings validation | unit tests | local / CI |
+| Observation layout and formulas, control law, hash refusal, bindings validation | unit tests | local; hosted CI status unverified |
 | Closed loop executes end to end | synthetic smoke (25 ticks) | local |
-| Private-robot closed loop | In the author's private 60 s autonomous smoke run (not reproducible here): 3,000 ticks, exactly 30,000 physics steps, 0 missed deadlines, no fall; push recovery was stance-phase dependent and is **not** claimed as robustness | author-reported |
 | Hardware / physical joystick / on-screen viewer | not verified | — |
 
 ## 7. Differences from the private development version
@@ -118,3 +116,5 @@ initial pose, sensor/geom/body names, root-height target, gains) → runtime bin
 (`.mjb` or XML) instead of a fixed export directory; command-line interface; recorded-fixture replay apps and
 model-bound tests removed and replaced by synthetic ones; private source references stripped from comments.
 Not migrated: the model, ONNX weights, fixtures, run manifests, session notes.
+
+Current non-stepping checks and publication boundaries: [final public-readiness pass](public_readiness.md).

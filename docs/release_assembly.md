@@ -1,5 +1,8 @@
 # Research presentation and release assembly
 
+Historical initial-assembly record: the repository has since been pushed privately.
+See [final public-readiness checks](public_readiness.md) for the later native/docs pass.
+
 This pass changes presentation, navigation and author metadata only. The validated
 algorithms, public configurations and sanitized canonical result values are unchanged.
 The README contains a centered scope/result header, factual dependency badges, three

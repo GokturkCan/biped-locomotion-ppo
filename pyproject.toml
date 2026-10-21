@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "biped-locomotion-ppo"
+version = "0.1.0"
+description = "PPO locomotion methodology with an external private-model boundary"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = ["numpy>=1.26,<3", "PyYAML>=6,<7"]
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+simulation = ["jax==0.6.2", "flax==0.11.2", "mujoco==3.6.0", "mujoco-mjx==3.6.0", "brax==0.14.2", "ml-collections==1.1.0"]
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+biped_locomotion = ["data/*.json", "environments/dispatch.json"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

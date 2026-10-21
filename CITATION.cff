@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite this research software and separately acknowledge MuJoCo Playground."
+title: "PPO-Based Forward Locomotion for a Custom Biped Robot"
+type: software
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - family-names: Can
+    given-names: Göktürk

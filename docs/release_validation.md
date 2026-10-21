@@ -1,5 +1,10 @@
 # Migration-stage validation (historical snapshot)
 
+This records migration-time files, checks and Git state. Its publication checklist is
+historical, not a current release gate. The repository is now public; the owner reports
+supervisor authorization with supplied model assets excluded. See
+[current public-release status](public_readiness.md).
+
 ## 1. New repository
 
 `biped-locomotion-ppo`, a new sibling of the private development project. Fresh git
@@ -104,8 +109,9 @@ bounded evaluation API. Exact V24 historical parent/seed cannot be recovered fro
 ## 13. Licensing/provenance
 
 Upstream Apache license/copyright retained; selected dependency provenance documented.
-Owner must confirm rights for uncommitted research additions, permission to publish sanitized
-aggregate findings, and citation/author metadata. No license to the private robot is granted.
+At migration time, confirmation of research-publication permission and author metadata was
+pending. The owner has since reported supervisor authorization to publish with supplied model
+assets excluded. No license to the private robot is granted.
 
 ## 14–15. Restricted-data and path scans
 
@@ -125,9 +131,10 @@ At migration time, no technical blocker was identified for a private first local
 unstaged for the owner's review. This historical report did not authorize committing; the subsequent final-review instruction
 conditionally authorizes the first local commit. Current results are in final_release_review.md.
 
-## 18. Before GitHub publication
+## 18. Historical pre-publication checklist
 
-Confirm research-code and aggregate-result publication rights and citation metadata. Review
-the extraction/boundary/limitations; resolve dependency installation on a clean machine.
+The migration checklist called for publication authorization and citation confirmation,
+review of the extraction/boundary/limitations, and clean-machine dependency installation.
+Later validation and current public status are recorded in [public readiness](public_readiness.md).
 Private physical parity is still required before claiming this edition reproduces the exact
 historical V24/U13 trajectories. Public contract success must not be described as that proof.

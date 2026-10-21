@@ -6,5 +6,6 @@ are distinct experiments. Original evidence remains in the private archive.
 
 Per-channel effort results are excluded to avoid exposing model structure. Effort methodology
 and high-level interpretation remain in [the documentation](../docs/actuator_effort.md).
-U13 reward rows are rounded positive contributions, not a complete net-return decomposition. Publication
-permission for aggregate findings remains an owner decision. Do not add raw data here.
+U13 reward rows are rounded positive contributions, not a complete net-return decomposition.
+The repository is public; the owner reports supervisor authorization with supplied model assets
+excluded. See [provenance and licensing](../THIRD_PARTY_NOTICES.md). Do not add raw data here.

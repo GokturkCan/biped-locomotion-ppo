@@ -105,7 +105,7 @@ pass runs only the available short contract subset and reports its actual result
 |---|---|---|
 | Runtime compiles and 15 CTest entries pass on synthetic data | `ctest` | local; ONNX-free subset configured in CI |
 | ONNX Runtime output equals a NumPy reference (synthetic weights) | `test_onnx_actor`, `test_onnx_export.py` | local |
-| Observation layout and formulas, control law, hash refusal, bindings validation | unit tests | local; hosted CI status unverified |
+| Observation layout and formulas, control law, hash refusal, bindings validation | unit tests | local; ONNX-free hosted native CI passed ([run](https://github.com/GokturkCan/biped-locomotion-ppo/actions/runs/39654028986)) |
 | Closed loop executes end to end | synthetic smoke (25 ticks) | local |
 | Hardware / physical joystick / on-screen viewer | not verified | — |
 

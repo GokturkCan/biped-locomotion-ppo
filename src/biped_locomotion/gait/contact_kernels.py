@@ -52,10 +52,10 @@ def ResidualSteppingInPlaceV1__foot_roll_pitch(
 ) -> tuple[jax.Array, jax.Array, jax.Array, jax.Array]:
     """Cheap per-foot roll/pitch from geom_xmat.
 
-    Matrix indexing only (no contact-force decode), the same technique as
-    scripts/schaft_bridge_diagnostic.py's _foot_geom_diagnostics -- safe to
-    compute every training step, unlike the contact-force-sum diagnostics
-    that script deliberately keeps opt-in/standalone.
+    The calculation reads three entries from each foot geometry rotation matrix
+    and applies a fixed number of scalar operations. It does not iterate over
+    contacts or decode contact forces, so its cost is small enough for each
+    training step.
     """
 
     def roll_pitch(mat_flat: jax.Array) -> tuple[jax.Array, jax.Array]:

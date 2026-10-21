@@ -12,7 +12,7 @@ event-based reward shaping, and quantitative forward-locomotion evaluation in Mu
 ![MuJoCo](https://img.shields.io/badge/MuJoCo-3.6.0-555555)
 ![MJX](https://img.shields.io/badge/Backend-MJX-555555)
 ![PPO](https://img.shields.io/badge/Algorithm-PPO-555555)
-[![Tests](https://img.shields.io/badge/Tests-public%20contracts-555555)](docs/release_assembly.md)
+[![CI](https://github.com/GokturkCan/biped-locomotion-ppo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/GokturkCan/biped-locomotion-ppo/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](LICENSE)
 
 **Validated forward locomotion in simulation: 6.9976 m over 60 s · 0 falls**
@@ -338,4 +338,4 @@ Please also acknowledge the upstream projects used in your work.
 **Göktürk Can** · [GitHub @GokturkCan](https://github.com/GokturkCan).
 Distributed code and documentation use [Apache-2.0](LICENSE), with retained upstream
 attribution. The undistributed private robot model is outside this repository's license.
-Institutional/research publication permissions must be confirmed before public visibility.
+The owner reports supervisor authorization to publish the project while excluding the supplied URDF and derived robot-model assets.

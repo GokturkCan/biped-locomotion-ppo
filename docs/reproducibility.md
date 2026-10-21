@@ -44,5 +44,6 @@ Final review: 27 tests passed with no skips in the isolated installed-wheel envi
 The accepted wheel SHA-256 and per-check commands are recorded in clean_install_result.json.
 At technical-review time the first local commit was pending author identity. The owner
 subsequently supplied it and authorized local release-assembly commits; see
-[release assembly](release_assembly.md) for the current pass. No remote or push is part of
-this release work. Publication rights remain a separate public-visibility gate.
+[release assembly](release_assembly.md) for that historical snapshot. The repository is now
+public with owner-reported supervisor authorization excluding supplied model assets; see
+[current release status](public_readiness.md). Exact private-model reproduction remains unvalidated.

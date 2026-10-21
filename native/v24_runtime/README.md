@@ -82,7 +82,7 @@ no controller → neutral command. The `BIPED_PUSH_AT_S` environment variable tr
 | Item | Status |
 |---|---|
 | Builds (MuJoCo 3.6.0, ONNX Runtime 1.27.0, SDL2, GLFW found; Ubuntu 22.04, g++) | verified locally |
-| 15 synthetic-data CTest entries (full) / 9 (no ONNX Runtime, with SDL2) | verified locally; the ONNX-free subset is what CI runs (not yet observed on GitHub) |
+| 15 synthetic-data CTest entries (full) / 9 (no ONNX Runtime, with SDL2) | full build verified locally; the ONNX-free native job passed on GitHub-hosted Actions ([rewritten-main run](https://github.com/GokturkCan/biped-locomotion-ppo/actions/runs/39654028986)); hosted CI does not run the full 15-entry build |
 | ONNX Runtime vs NumPy reference on a **synthetic** random-weight actor | verified (max diff < 1e-4 enforced) |
 | End-to-end app smoke on synthetic assets (25 ticks) | verified; confirms the loop executes, says nothing about walking |
 | GLFW viewer | compiles; on-screen rendering **not verified** in this release |

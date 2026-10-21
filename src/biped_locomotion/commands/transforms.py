@@ -3,12 +3,12 @@
 # Adapted from the private research working tree based on MuJoCo Playground.
 # Robot descriptions and model parameters are intentionally excluded.
 
-"""Pure world-frame to body-frame command transform for the SCHAFT V25 contract.
+"""Body/world-frame command transform for the retained unified command/observation contract.
 
 OBS_CONTRACT_V2
 ---------------
-The V25 actor observation preserves the V24 57-D shape. Actor indices 49-51
-ALWAYS represent the desired command expressed in the robot BODY frame:
+The retained command representation at actor indices 49-51 expresses the desired
+command in the robot BODY frame:
 
     obs[49] = vx_body   (desired forward velocity, body frame)
     obs[50] = vy_body   (desired lateral velocity, body frame)
@@ -18,11 +18,10 @@ External command sources reach that body-frame representation two ways:
 
   * BODY-frame sources (physical joystick / teleoperation) are already in the
     body frame and are passed through unchanged. They MUST bypass this
-    converter; that pass-through/adapter selection lives in the future P2
-    observation-adapter layer, NOT here.
-  * WORLD-frame sources (legacy path / navigation commands, e.g. the V24 /
-    S1a legacy-equivalence path) are rotated into the body frame by this
-    module using ``R(-yaw)``.
+    converter; selection between pass-through and conversion belongs to the
+    caller, not this transform.
+  * WORLD-frame sources (path or navigation commands) are rotated into the body
+    frame by this module using ``R(-yaw)``.
 
 Transform (rotation of a world-frame planar velocity into the body frame):
 
@@ -83,7 +82,7 @@ def body_command_vector(vx_world, vy_world, yaw_rate, yaw):
     OBS_CONTRACT_V2 actor indices ``[49, 50, 51]``.
 
     BODY-frame command sources must NOT call this function; they are already in
-    the body frame and are handled by the P2 adapter pass-through.
+    the body frame and must be passed through unchanged by the caller.
 
     Args:
       vx_world: Desired world-frame forward (x) velocity.

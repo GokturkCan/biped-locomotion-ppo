@@ -15,8 +15,6 @@
 - Lateral/yaw/backward/omnidirectional success, hardware transfer, rough terrain, push robustness
   and seed robustness are not established by this artifact.
 - Exact generalized effort is simulation-dependent and is not a motor specification.
-- Owner confirmation of research-code rights, aggregate publication permission
-  remains necessary before public visibility. Author metadata are owner-specified.
 
 - Final clean-environment validation covers the installed public package and synthetic kernels
   on CPU, not model physics. Dependency installation alone does not establish physical parity.

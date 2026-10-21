@@ -1,13 +1,15 @@
 # Research presentation and release assembly
 
-Historical initial-assembly record: the repository has since been pushed privately.
-See [final public-readiness checks](public_readiness.md) for the later native/docs pass.
+Historical initial-assembly snapshot: commit/push statements and permission checks below
+describe that earlier stage, not current release blockers. The repository is now public;
+the owner reports supervisor authorization with supplied model assets excluded. See
+[current public-release status](public_readiness.md).
 
 This pass changes presentation, navigation and author metadata only. The validated
 algorithms, public configurations and sanitized canonical result values are unchanged.
 The README contains a centered scope/result header, factual dependency badges, three
-Mermaid diagrams, semantic observation groups and linked research detail. The tests badge
-labels the public contract suite; it is not a hosted CI-status or benchmark badge.
+Mermaid diagrams, semantic observation groups and linked research detail. At that stage, the tests badge
+labeled public contracts; the current README instead uses a live GitHub Actions badge.
 No robot media, model assets, new physical measurements or fabricated history are added.
 
 ## Quick validation
@@ -43,11 +45,11 @@ of V13–V24 history. Only repository-local identity is configured: Göktürk Ca
 No remote is created and nothing is pushed. The final delivery report records hashes and
 actual status; historical migration/technical-review records describe their earlier state.
 
-## Public visibility gate
+## Historical publication review
 
 Technical checks validate public contracts, not the exact historical V24 trajectory.
 Authorized private-model parity is required before claiming exact physical reproduction
-of this edition. Original research-code ownership and permission to publish aggregate
-findings must be confirmed before public visibility; the technical scan cannot decide
-institutional or supervisor agreements. The private robot is excluded from Apache-2.0
-repository contents and no license to it is implied.
+of this edition. Publication authorization was pending at assembly time; the owner now
+reports supervisor authorization for publication with supplied model assets excluded.
+The private robot remains outside Apache-2.0 repository contents and no license to it
+is implied. See [third-party notices](../THIRD_PARTY_NOTICES.md).

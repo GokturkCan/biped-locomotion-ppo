@@ -1,10 +1,24 @@
 # Final public-readiness checks
 
-Historical review snapshot, preceding the stricter effort-data boundary. The per-channel
-effort CSV was subsequently removed from the current tree because anonymization still
-exposed model structure. Earlier commits retain that file: a normal deletion commit does
-not purge Git history. Public visibility therefore requires a separate decision about
-removing that historical artifact; this follow-up does not rewrite history.
+## Current public release
+
+The repository is public. The owner reports supervisor authorization to publish the
+project while excluding the supplied URDF and derived robot-model assets. Apache-2.0
+and the retained upstream attribution apply to distributed contents, not those assets.
+
+The per-channel effort CSV is absent from the current tree and reachable main history.
+History was rewritten specifically to remove that path, producing rewritten HEAD
+`02fc3a51cc84781878e378b5f853514cd0134c07`. Current main uses that clean public history;
+subsequent documentation commits build on it. Other files, canonical results and commit
+authorship were preserved. No trained weights, robot-model assets or media are present.
+
+GitHub-hosted [Actions run 39654028986](https://github.com/GokturkCan/biped-locomotion-ppo/actions/runs/39654028986)
+succeeded on that rewritten main commit: both **cpu** and **native** jobs passed. The
+native job is the ONNX-free synthetic subset, not the full local 15-entry build. The
+README's live Actions badge shows the current branch's workflow status.
+
+Old unreferenced GitHub objects may persist outside reachable branch history under
+platform retention behavior. No GitHub Support purge is claimed.
 
 ## Scope and presentation
 
@@ -38,7 +52,7 @@ The surrounding text explicitly labels this author-reported, states that no nume
 receipt is retained in the release, and distinguishes it from reproducible synthetic
 ONNX Runtime-versus-NumPy tests. No numerical private result was invented or recomputed.
 
-## Local checks actually run
+## Historical local validation record
 
 | Check | Result |
 |---|---|
@@ -79,7 +93,7 @@ ctest --test-dir "$BUILD_DIR" --output-on-failure --timeout 20 \
 physical parity, locomotion evaluation, training, rendering or hardware joystick testing.
 Compiled viewer support is not a claim that on-screen rendering was tested.
 
-## Public boundary and GitHub
+## Public boundary and attribution
 
 Review covered the working tree and every unique path/blob pair reachable from local,
 remote-tracking and reflog history. The release has a single initial-assembly root;
@@ -94,14 +108,12 @@ Apache-2.0 and upstream notices remain intact. External MuJoCo, ONNX Runtime, SD
 GLFW and OpenSSL dependencies are linked, not vendored. The undistributed private model
 is outside the repository license. Author and committer identity is Göktürk Can only.
 
-The inspected workflow has Python test/deploy checks and a native ONNX-independent
-synthetic test job. Neither trains a policy or loads the restricted robot. The GitHub
-connector returned 404 for this private repository; no authenticated Actions CLI/API
-was available. **GITHUB-HOSTED CI STATUS: USER MUST VERIFY.** No hosted success is claimed.
+The workflow has Python test/deploy checks and a native ONNX-independent synthetic
+job. Their successful hosted run is linked above. Neither trains a policy or loads the
+restricted robot. The historical local validation table describes a separate dependency-rich
+CPU environment and does not imply that hosted CI runs every optional test.
 
-A normal documentation follow-up commit and push to origin/main are authorized; the
-final delivery report records their actual outcome. No visibility change is authorized.
-Before public visibility, verify the pushed Actions run and README rendering and confirm
-permission to publish the original research code and aggregate findings. Private physical
-parity is necessary only before claiming this edition exactly reproduces the historical
-robot behavior; it is not established by these public contracts.
+Private physical parity is necessary before claiming this edition exactly reproduces
+the historical robot behavior; public contracts and hosted CI do not establish that claim.
+Documentation snapshots in release_assembly.md, final_release_review.md and
+release_validation.md retain their earlier-stage evidence and are not current publication gates.

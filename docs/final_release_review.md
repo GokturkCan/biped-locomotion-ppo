@@ -1,8 +1,9 @@
 # Final technical and research release review
 
-This is the technical-review snapshot preceding the presentation pass. The owner has
-since supplied the local Git identity and authorized release-assembly commits. See
-[release assembly](release_assembly.md) for current Git intent and presentation validation.
+Historical technical-review snapshot preceding release assembly. Its Git state and
+publication checks record that earlier stage, not current blockers. The repository is now
+public; the owner reports supervisor authorization with supplied model assets excluded.
+See [current public-release status](public_readiness.md).
 
 ## Technical corrections
 
@@ -84,13 +85,12 @@ raw model-rich exports, binary/large artifacts and nested git history. They cann
 ownership or rule out every encoded sensitive value. The small aggregate records were reviewed
 for schema and canonical-number consistency.
 
-The first local commit is conditional on passing technical checks and a valid author identity.
+At technical-review time, the first local commit was conditional on passing checks and a valid author identity.
 No Git author name/email was configured at review time; the owner was asked to provide one.
-Nothing will be staged or committed while a required identity or critical ownership decision
-remains unresolved. No remote, push or publication is authorized by this review.
-Before public visibility, confirm rights/attribution and accept the documented reproduction
-limits; physical parity remains necessary before claiming exact release-edition reproduction.
-The final assistant report supplies the actual git status and commit hash, if any.
+Staging and committing were deferred while those inputs were pending; that review did not
+authorize a remote, push or publication. These were historical review conditions. Physical
+parity remains necessary before claiming exact release-edition reproduction; later publication
+status and owner-reported authorization are recorded in [public readiness](public_readiness.md).
 
 ## Historical technical-review disposition
 
@@ -98,13 +98,13 @@ Technical gates passed: isolated wheel installation, dependency consistency, 27 
 with no skips, smoke, both config-only CLIs, runtime imports, installed-code/data identity,
 publication scan and whitespace review. Canonical result files remain unchanged in value.
 
-Git remains a fresh main branch with no objects/commits/remotes. Files are untracked and
+At that review stage, Git was a fresh main branch with no objects/commits/remotes. Files were untracked and
 unstaged. `git var GIT_AUTHOR_IDENT` confirmed no usable author identity. Name/email were
 requested rather than fabricated. Release-authority confirmation was also requested because
 an upstream license header does not establish ownership of original research additions.
 No first commit was attempted while these inputs were pending.
 
-Technical eligibility for a private release repository is established; no repository was
-created remotely. Before public visibility, confirm original-code/aggregate publication
-rights and citation metadata. Private physical validation remains required only for a claim
+Technical eligibility for a private release repository was established; no repository had
+then been created remotely. The repository is now public with the owner-reported supervisor
+authorization described above. Private physical validation remains required only for a claim
 that the modular edition reproduces the exact historical robot trajectories.

@@ -20,8 +20,8 @@ redistributing dependency bundles. No Menagerie assets or ONNX Runtime binaries 
 `native/v24_runtime/` links, but does not vendor, the MuJoCo C library, ONNX Runtime, SDL2, GLFW (optional)
 and OpenSSL; their licenses apply to any binaries you build or distribute.
 
-Before publication, the project owner must confirm ownership/permission for the
-research additions and approved aggregate findings. Author/citation metadata identify Göktürk Can.
+The owner reports supervisor authorization to publish the project while excluding the supplied URDF and derived robot-model assets.
+Author/citation metadata identify Göktürk Can.
 Existing source headers do not establish ownership of every research addition.
 
 ## Final composition review

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "reported historical result; not rerun during migration",
+  "checkpoint": "000003440640",
+  "horizon_s": 60,
+  "net_forward_displacement_m": 6.9976,
+  "mean_body_forward_velocity_m_s": 0.1151,
+  "mean_command_velocity_m_s": 0.09997,
+  "single_support_percent": 34.56,
+  "fall_count": 0,
+  "transfer_timeout": 0,
+  "unexpected_side_events": 0,
+  "maximum_same_side_sequence": 1,
+  "action_saturation": 0,
+  "ctrl_saturation": 0,
+  "force_saturation": 0,
+  "training_seed": "unpersisted",
+  "evidence": "Final research evidence ledger and canonical V24 summary; original logs held privately"
+}

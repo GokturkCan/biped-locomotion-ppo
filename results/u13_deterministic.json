@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "horizon_s": 20,
+  "single_support_percent": 34.81,
+  "alternating_touchdowns": 26.46,
+  "support_transfers": 27.34,
+  "falls": 0,
+  "same_side_repeats": 0,
+  "transfer_timeouts": 0,
+  "net_displacement_m": -0.032,
+  "mean_body_vx_m_s": -0.0021,
+  "mean_command_vx_m_s": 0.0486,
+  "mean_abs_vx_error_m_s": 0.0574,
+  "interpretation": "gait acquisition without successful forward tracking",
+  "lateral_yaw_tracking": "unmeasured",
+  "backward_success": "not demonstrated",
+  "training_transitions": 20480000,
+  "initialization": "fresh actor/critic/optimizer/normalizer; no checkpoint restore",
+  "evidence": "Historical canonical research summary; not rerun during migration"
+}

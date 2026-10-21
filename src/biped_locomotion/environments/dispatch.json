@@ -1,0 +1,664 @@
+{
+  "registry": {
+    "FootUnload._foot_unload_terms": [
+      "rewards.common_kernels",
+      "FootUnload__foot_unload_terms"
+    ],
+    "FootUnload.reset": [
+      "environments.v24_lifecycle",
+      "FootUnload__reset"
+    ],
+    "FootUnloadBridgeLiteV0._bridge_phase": [
+      "gait.phase_kernels",
+      "FootUnloadBridgeLiteV0__bridge_phase"
+    ],
+    "FootUnloadBridgeLiteV0.reset": [
+      "environments.v24_lifecycle",
+      "FootUnloadBridgeLiteV0__reset"
+    ],
+    "FootUnloadV2._foot_unload_terms": [
+      "rewards.common_kernels",
+      "FootUnloadV2__foot_unload_terms"
+    ],
+    "FootUnloadV2._post_init": [
+      "environments.setup",
+      "FootUnloadV2__post_init"
+    ],
+    "FootUnloadV2.reset": [
+      "environments.v24_lifecycle",
+      "FootUnloadV2__reset"
+    ],
+    "ResidualForwardWalkingV1._forward_yaw_from_quat": [
+      "environments.shared_helpers",
+      "ResidualForwardWalkingV1__forward_yaw_from_quat"
+    ],
+    "ResidualForwardWalkingV1._post_init": [
+      "environments.setup",
+      "ResidualForwardWalkingV1__post_init"
+    ],
+    "ResidualForwardWalkingV1.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV1__reset"
+    ],
+    "ResidualForwardWalkingV13._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV13__empty_metrics"
+    ],
+    "ResidualForwardWalkingV13._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV13__update_metrics"
+    ],
+    "ResidualForwardWalkingV13._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV13__v9_components"
+    ],
+    "ResidualForwardWalkingV16._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV16__empty_metrics"
+    ],
+    "ResidualForwardWalkingV16._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV16__update_metrics"
+    ],
+    "ResidualForwardWalkingV16._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV16__v9_components"
+    ],
+    "ResidualForwardWalkingV16.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV16__reset"
+    ],
+    "ResidualForwardWalkingV18._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV18__empty_metrics"
+    ],
+    "ResidualForwardWalkingV18._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV18__update_metrics"
+    ],
+    "ResidualForwardWalkingV18._v18_apply_phase": [
+      "gait.phase_kernels",
+      "ResidualForwardWalkingV18__v18_apply_phase"
+    ],
+    "ResidualForwardWalkingV18._v18_event_phase": [
+      "gait.phase_kernels",
+      "ResidualForwardWalkingV18__v18_event_phase"
+    ],
+    "ResidualForwardWalkingV18._v18_legacy_phase": [
+      "gait.phase_kernels",
+      "ResidualForwardWalkingV18__v18_legacy_phase"
+    ],
+    "ResidualForwardWalkingV18.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV18__reset"
+    ],
+    "ResidualForwardWalkingV18.step": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV18__step"
+    ],
+    "ResidualForwardWalkingV19._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV19__v9_components"
+    ],
+    "ResidualForwardWalkingV2._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV2__empty_metrics"
+    ],
+    "ResidualForwardWalkingV2._get_obs": [
+      "observations.v24_kernels",
+      "ResidualForwardWalkingV2__get_obs"
+    ],
+    "ResidualForwardWalkingV2._q_ref_phase": [
+      "control.source_kernels",
+      "ResidualForwardWalkingV2__q_ref_phase"
+    ],
+    "ResidualForwardWalkingV2._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV2__update_metrics"
+    ],
+    "ResidualForwardWalkingV2._v3_control_law": [
+      "control.source_kernels",
+      "ResidualForwardWalkingV2__v3_control_law"
+    ],
+    "ResidualForwardWalkingV20._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV20__empty_metrics"
+    ],
+    "ResidualForwardWalkingV20._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV20__update_metrics"
+    ],
+    "ResidualForwardWalkingV20._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV20__v9_components"
+    ],
+    "ResidualForwardWalkingV21._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV21__v9_components"
+    ],
+    "ResidualForwardWalkingV22._get_obs": [
+      "observations.v24_kernels",
+      "ResidualForwardWalkingV22__get_obs"
+    ],
+    "ResidualForwardWalkingV23._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV23__v9_components"
+    ],
+    "ResidualForwardWalkingV24._get_obs": [
+      "observations.v24_kernels",
+      "ResidualForwardWalkingV24__get_obs"
+    ],
+    "ResidualForwardWalkingV24._v9_components": [
+      "rewards.forward_kernels",
+      "ResidualForwardWalkingV24__v9_components"
+    ],
+    "ResidualForwardWalkingV24.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV24__reset"
+    ],
+    "ResidualForwardWalkingV24.step": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV24__step"
+    ],
+    "ResidualForwardWalkingV4Force._foot_vertical_ground_reaction_forces": [
+      "gait.contact_kernels",
+      "ResidualForwardWalkingV4Force__foot_vertical_ground_reaction_forces"
+    ],
+    "ResidualForwardWalkingV5.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV5__reset"
+    ],
+    "ResidualForwardWalkingV6._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV6__empty_metrics"
+    ],
+    "ResidualForwardWalkingV6._forward_terms": [
+      "rewards.common_kernels",
+      "ResidualForwardWalkingV6__forward_terms"
+    ],
+    "ResidualForwardWalkingV6._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV6__update_metrics"
+    ],
+    "ResidualForwardWalkingV6._v6_components": [
+      "rewards.acquisition_kernels",
+      "ResidualForwardWalkingV6__v6_components"
+    ],
+    "ResidualForwardWalkingV6.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV6__reset"
+    ],
+    "ResidualForwardWalkingV7._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV7__empty_metrics"
+    ],
+    "ResidualForwardWalkingV7._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV7__update_metrics"
+    ],
+    "ResidualForwardWalkingV7._v7_components": [
+      "rewards.acquisition_kernels",
+      "ResidualForwardWalkingV7__v7_components"
+    ],
+    "ResidualForwardWalkingV7.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV7__reset"
+    ],
+    "ResidualForwardWalkingV8._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV8__empty_metrics"
+    ],
+    "ResidualForwardWalkingV8._get_reward": [
+      "rewards.common_kernels",
+      "ResidualForwardWalkingV8__get_reward"
+    ],
+    "ResidualForwardWalkingV8._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV8__update_metrics"
+    ],
+    "ResidualForwardWalkingV8._v8_components": [
+      "rewards.acquisition_kernels",
+      "ResidualForwardWalkingV8__v8_components"
+    ],
+    "ResidualForwardWalkingV8._v8_liftoff_touchdown_state": [
+      "environments.shared_helpers",
+      "ResidualForwardWalkingV8__v8_liftoff_touchdown_state"
+    ],
+    "ResidualForwardWalkingV8.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV8__reset"
+    ],
+    "ResidualForwardWalkingV9._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV9__empty_metrics"
+    ],
+    "ResidualForwardWalkingV9._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualForwardWalkingV9__update_metrics"
+    ],
+    "ResidualForwardWalkingV9._v8_components": [
+      "rewards.acquisition_kernels",
+      "ResidualForwardWalkingV9__v8_components"
+    ],
+    "ResidualForwardWalkingV9._v9_components": [
+      "rewards.acquisition_kernels",
+      "ResidualForwardWalkingV9__v9_components"
+    ],
+    "ResidualForwardWalkingV9._v9_expected_side_gates": [
+      "environments.shared_helpers",
+      "ResidualForwardWalkingV9__v9_expected_side_gates"
+    ],
+    "ResidualForwardWalkingV9._v9_positive_step_contributions": [
+      "environments.shared_helpers",
+      "ResidualForwardWalkingV9__v9_positive_step_contributions"
+    ],
+    "ResidualForwardWalkingV9.reset": [
+      "environments.v24_lifecycle",
+      "ResidualForwardWalkingV9__reset"
+    ],
+    "ResidualSteppingInPlaceV1._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualSteppingInPlaceV1__empty_metrics"
+    ],
+    "ResidualSteppingInPlaceV1._foot_roll_pitch": [
+      "gait.contact_kernels",
+      "ResidualSteppingInPlaceV1__foot_roll_pitch"
+    ],
+    "ResidualSteppingInPlaceV1._post_init": [
+      "environments.setup",
+      "ResidualSteppingInPlaceV1__post_init"
+    ],
+    "ResidualSteppingInPlaceV1._stepping_phase": [
+      "gait.phase_kernels",
+      "ResidualSteppingInPlaceV1__stepping_phase"
+    ],
+    "ResidualSteppingInPlaceV1._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualSteppingInPlaceV1__update_metrics"
+    ],
+    "ResidualSteppingInPlaceV1.reset": [
+      "environments.v24_lifecycle",
+      "ResidualSteppingInPlaceV1__reset"
+    ],
+    "ResidualSteppingInPlaceV3._contact_count": [
+      "gait.contact_kernels",
+      "ResidualSteppingInPlaceV3__contact_count"
+    ],
+    "ResidualSteppingInPlaceV3._empty_metrics": [
+      "evaluation.source_metrics",
+      "ResidualSteppingInPlaceV3__empty_metrics"
+    ],
+    "ResidualSteppingInPlaceV3._post_init": [
+      "environments.setup",
+      "ResidualSteppingInPlaceV3__post_init"
+    ],
+    "ResidualSteppingInPlaceV3._update_metrics": [
+      "evaluation.source_metrics",
+      "ResidualSteppingInPlaceV3__update_metrics"
+    ],
+    "ResidualSteppingInPlaceV3.reset": [
+      "environments.v24_lifecycle",
+      "ResidualSteppingInPlaceV3__reset"
+    ],
+    "ResidualSteppingInPlaceV32._post_init": [
+      "environments.setup",
+      "ResidualSteppingInPlaceV32__post_init"
+    ],
+    "SchaftUnifiedJoystickV1.__init__": [
+      "environments.unified_setup",
+      "SchaftUnifiedJoystickV1__init"
+    ],
+    "SchaftUnifiedJoystickV1._apply_canonical_start": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__apply_canonical_start"
+    ],
+    "SchaftUnifiedJoystickV1._apply_quiet_freeze": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__apply_quiet_freeze"
+    ],
+    "SchaftUnifiedJoystickV1._assemble_reward": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__assemble_reward"
+    ],
+    "SchaftUnifiedJoystickV1._empty_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__empty_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._get_obs": [
+      "observations.u13_kernels",
+      "SchaftUnifiedJoystickV1__get_obs"
+    ],
+    "SchaftUnifiedJoystickV1._reset_bout_local": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__reset_bout_local"
+    ],
+    "SchaftUnifiedJoystickV1._strict_yaw_dc_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__strict_yaw_dc_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._u13_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__u13_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._u4_unified_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__u4_unified_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._u6v10_accounting_metric_keys": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__u6v10_accounting_metric_keys"
+    ],
+    "SchaftUnifiedJoystickV1._u6v10_accounting_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__u6v10_accounting_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._u6v10_group_gate": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__u6v10_group_gate"
+    ],
+    "SchaftUnifiedJoystickV1._unified_components": [
+      "rewards.unified_kernels",
+      "SchaftUnifiedJoystickV1__unified_components"
+    ],
+    "SchaftUnifiedJoystickV1._unified_metrics": [
+      "evaluation.source_metrics",
+      "SchaftUnifiedJoystickV1__unified_metrics"
+    ],
+    "SchaftUnifiedJoystickV1._v11_gait_core_components": [
+      "rewards.unified_kernels",
+      "SchaftUnifiedJoystickV1__v11_gait_core_components"
+    ],
+    "SchaftUnifiedJoystickV1._v11_metric_keys": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__v11_metric_keys"
+    ],
+    "SchaftUnifiedJoystickV1._v11_potential_delta": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__v11_potential_delta"
+    ],
+    "SchaftUnifiedJoystickV1._write_back": [
+      "environments.unified_helpers",
+      "SchaftUnifiedJoystickV1__write_back"
+    ],
+    "SchaftUnifiedJoystickV1.reset": [
+      "environments.u13_lifecycle",
+      "SchaftUnifiedJoystickV1__reset"
+    ],
+    "SchaftUnifiedJoystickV1.step": [
+      "environments.u13_lifecycle",
+      "SchaftUnifiedJoystickV1__step"
+    ],
+    "Walking._get_termination": [
+      "environments.shared_helpers",
+      "Walking__get_termination"
+    ],
+    "Walking._post_init": [
+      "environments.setup",
+      "Walking__post_init"
+    ],
+    "Walking._roll_pitch": [
+      "environments.shared_helpers",
+      "Walking__roll_pitch"
+    ],
+    "Walking._termination_flags": [
+      "environments.shared_helpers",
+      "Walking__termination_flags"
+    ],
+    "WalkingW05._foot_contacts": [
+      "gait.contact_kernels",
+      "WalkingW05__foot_contacts"
+    ],
+    "WalkingW05._post_init": [
+      "environments.setup",
+      "WalkingW05__post_init"
+    ],
+    "WalkingW1._foot_motion": [
+      "gait.contact_kernels",
+      "WalkingW1__foot_motion"
+    ],
+    "WalkingW1._foot_positions": [
+      "gait.contact_kernels",
+      "WalkingW1__foot_positions"
+    ],
+    "WalkingW1._get_privileged_obs": [
+      "observations.v24_kernels",
+      "WalkingW1__get_privileged_obs"
+    ],
+    "WalkingW1._post_init": [
+      "environments.setup",
+      "WalkingW1__post_init"
+    ]
+  },
+  "static": [
+    "ResidualForwardWalkingV1._forward_yaw_from_quat"
+  ],
+  "effective": {
+    "v24": {
+      "_bridge_phase": "FootUnloadBridgeLiteV0._bridge_phase",
+      "_foot_positions": "WalkingW1._foot_positions",
+      "_foot_unload_terms": "FootUnloadV2._foot_unload_terms",
+      "_q_ref_phase": "ResidualForwardWalkingV2._q_ref_phase",
+      "_post_init": "ResidualForwardWalkingV1._post_init",
+      "_v9_positive_step_contributions": "ResidualForwardWalkingV9._v9_positive_step_contributions",
+      "_v6_components": "ResidualForwardWalkingV6._v6_components",
+      "_v3_control_law": "ResidualForwardWalkingV2._v3_control_law",
+      "_v7_components": "ResidualForwardWalkingV7._v7_components",
+      "_get_termination": "Walking._get_termination",
+      "_empty_metrics": "ResidualForwardWalkingV20._empty_metrics",
+      "step": "ResidualForwardWalkingV24.step",
+      "_v18_event_phase": "ResidualForwardWalkingV18._v18_event_phase",
+      "_roll_pitch": "Walking._roll_pitch",
+      "_forward_terms": "ResidualForwardWalkingV6._forward_terms",
+      "_v18_apply_phase": "ResidualForwardWalkingV18._v18_apply_phase",
+      "_v18_legacy_phase": "ResidualForwardWalkingV18._v18_legacy_phase",
+      "_get_obs": "ResidualForwardWalkingV24._get_obs",
+      "_v8_liftoff_touchdown_state": "ResidualForwardWalkingV8._v8_liftoff_touchdown_state",
+      "reset": "ResidualForwardWalkingV24.reset",
+      "_forward_yaw_from_quat": "ResidualForwardWalkingV1._forward_yaw_from_quat",
+      "_get_reward": "ResidualForwardWalkingV8._get_reward",
+      "_v8_components": "ResidualForwardWalkingV9._v8_components",
+      "_get_privileged_obs": "WalkingW1._get_privileged_obs",
+      "_foot_motion": "WalkingW1._foot_motion",
+      "_foot_contacts": "WalkingW05._foot_contacts",
+      "_v9_expected_side_gates": "ResidualForwardWalkingV9._v9_expected_side_gates",
+      "_v9_components": "ResidualForwardWalkingV24._v9_components",
+      "_contact_count": "ResidualSteppingInPlaceV3._contact_count",
+      "_stepping_phase": "ResidualSteppingInPlaceV1._stepping_phase",
+      "_foot_roll_pitch": "ResidualSteppingInPlaceV1._foot_roll_pitch",
+      "_update_metrics": "ResidualForwardWalkingV20._update_metrics",
+      "_foot_vertical_ground_reaction_forces": "ResidualForwardWalkingV4Force._foot_vertical_ground_reaction_forces",
+      "_termination_flags": "Walking._termination_flags"
+    },
+    "u13": {
+      "_bridge_phase": "FootUnloadBridgeLiteV0._bridge_phase",
+      "_apply_quiet_freeze": "SchaftUnifiedJoystickV1._apply_quiet_freeze",
+      "_foot_positions": "WalkingW1._foot_positions",
+      "_foot_unload_terms": "FootUnloadV2._foot_unload_terms",
+      "_q_ref_phase": "ResidualForwardWalkingV2._q_ref_phase",
+      "_reset_bout_local": "SchaftUnifiedJoystickV1._reset_bout_local",
+      "_post_init": "ResidualForwardWalkingV1._post_init",
+      "_v9_positive_step_contributions": "ResidualForwardWalkingV9._v9_positive_step_contributions",
+      "_v6_components": "ResidualForwardWalkingV6._v6_components",
+      "_u6v10_group_gate": "SchaftUnifiedJoystickV1._u6v10_group_gate",
+      "_v3_control_law": "ResidualForwardWalkingV2._v3_control_law",
+      "_v7_components": "ResidualForwardWalkingV7._v7_components",
+      "_get_termination": "Walking._get_termination",
+      "_u6v10_accounting_metric_keys": "SchaftUnifiedJoystickV1._u6v10_accounting_metric_keys",
+      "_u4_unified_metrics": "SchaftUnifiedJoystickV1._u4_unified_metrics",
+      "_write_back": "SchaftUnifiedJoystickV1._write_back",
+      "_empty_metrics": "SchaftUnifiedJoystickV1._empty_metrics",
+      "_apply_canonical_start": "SchaftUnifiedJoystickV1._apply_canonical_start",
+      "_assemble_reward": "SchaftUnifiedJoystickV1._assemble_reward",
+      "step": "SchaftUnifiedJoystickV1.step",
+      "_v18_event_phase": "ResidualForwardWalkingV18._v18_event_phase",
+      "_roll_pitch": "Walking._roll_pitch",
+      "_v11_gait_core_components": "SchaftUnifiedJoystickV1._v11_gait_core_components",
+      "_forward_terms": "ResidualForwardWalkingV6._forward_terms",
+      "_u6v10_accounting_metrics": "SchaftUnifiedJoystickV1._u6v10_accounting_metrics",
+      "_v18_apply_phase": "ResidualForwardWalkingV18._v18_apply_phase",
+      "_v18_legacy_phase": "ResidualForwardWalkingV18._v18_legacy_phase",
+      "_get_obs": "SchaftUnifiedJoystickV1._get_obs",
+      "_v8_liftoff_touchdown_state": "ResidualForwardWalkingV8._v8_liftoff_touchdown_state",
+      "reset": "SchaftUnifiedJoystickV1.reset",
+      "_v11_potential_delta": "SchaftUnifiedJoystickV1._v11_potential_delta",
+      "_forward_yaw_from_quat": "ResidualForwardWalkingV1._forward_yaw_from_quat",
+      "_get_reward": "ResidualForwardWalkingV8._get_reward",
+      "_u13_metrics": "SchaftUnifiedJoystickV1._u13_metrics",
+      "_v8_components": "ResidualForwardWalkingV9._v8_components",
+      "_get_privileged_obs": "WalkingW1._get_privileged_obs",
+      "_foot_motion": "WalkingW1._foot_motion",
+      "_foot_contacts": "WalkingW05._foot_contacts",
+      "__init__": "SchaftUnifiedJoystickV1.__init__",
+      "_v9_expected_side_gates": "ResidualForwardWalkingV9._v9_expected_side_gates",
+      "_v9_components": "ResidualForwardWalkingV24._v9_components",
+      "_contact_count": "ResidualSteppingInPlaceV3._contact_count",
+      "_unified_components": "SchaftUnifiedJoystickV1._unified_components",
+      "_v11_metric_keys": "SchaftUnifiedJoystickV1._v11_metric_keys",
+      "_stepping_phase": "ResidualSteppingInPlaceV1._stepping_phase",
+      "_foot_roll_pitch": "ResidualSteppingInPlaceV1._foot_roll_pitch",
+      "_update_metrics": "ResidualForwardWalkingV20._update_metrics",
+      "_unified_metrics": "SchaftUnifiedJoystickV1._unified_metrics",
+      "_strict_yaw_dc_metrics": "SchaftUnifiedJoystickV1._strict_yaw_dc_metrics",
+      "_foot_vertical_ground_reaction_forces": "ResidualForwardWalkingV4Force._foot_vertical_ground_reaction_forces",
+      "_termination_flags": "Walking._termination_flags"
+    }
+  },
+  "attributes": {
+    "v24": {
+      "_REWARD_TERMS": [
+        "alive",
+        "upright",
+        "root_height",
+        "deep_unload",
+        "pre_liftoff_clearance",
+        "effective_liftoff",
+        "swing_no_contact",
+        "actual_single_support",
+        "air_time",
+        "airborne_clearance",
+        "airborne_forward_progress",
+        "forward_touchdown",
+        "forward_velocity_progress",
+        "forward_displacement_progress",
+        "stable_single_support",
+        "post_touchdown_stability",
+        "touchdown_load_acceptance",
+        "alternating_touchdown",
+        "support_transfer_progress",
+        "support_transfer_completion",
+        "forward_velocity_tracking",
+        "v16_valid_step"
+      ],
+      "_PENALTY_TERMS": [
+        "continuous_swing_load",
+        "double_support_penalty",
+        "support_loss_penalty",
+        "ground_load_loss_penalty",
+        "joint_limit",
+        "lateral_drift_penalty",
+        "yaw_drift_penalty",
+        "fall",
+        "locomotion_instability",
+        "qualified_same_side_repeat",
+        "support_transfer_timeout",
+        "stance_slip",
+        "expected_swing_contact_motion_drag",
+        "completed_placement_band",
+        "bilateral_symmetry",
+        "imbalance_growth",
+        "persistent_lateral_path"
+      ],
+      "_PENALTY_METRIC_NAMES": {
+        "swing_contact_penalty": "swing_contact"
+      }
+    },
+    "u13": {
+      "_REWARD_TERMS": [
+        "alive",
+        "upright",
+        "root_height",
+        "action_rate",
+        "action_magnitude",
+        "forward_velocity_tracking",
+        "forward_velocity_progress",
+        "forward_displacement_progress",
+        "effective_liftoff",
+        "swing_no_contact",
+        "air_time",
+        "airborne_clearance",
+        "pre_liftoff_clearance",
+        "deep_unload",
+        "touchdown_load_acceptance",
+        "post_touchdown_stability",
+        "alternating_touchdown",
+        "support_transfer_progress",
+        "support_transfer_completion",
+        "stable_single_support",
+        "actual_single_support",
+        "v16_valid_step",
+        "forward_touchdown",
+        "airborne_forward_progress",
+        "track_vx",
+        "prog_vx",
+        "track_vy",
+        "prog_vy",
+        "track_wz",
+        "prog_wz",
+        "quiet_vx",
+        "quiet_vy",
+        "quiet_yaw",
+        "quiet_pose",
+        "quiet_double_support"
+      ],
+      "_PENALTY_TERMS": [
+        "joint_limit",
+        "stance_slip",
+        "locomotion_instability",
+        "yaw_drift_penalty",
+        "lateral_drift_penalty",
+        "persistent_lateral_path",
+        "qualified_same_side_repeat",
+        "support_transfer_timeout",
+        "continuous_swing_load",
+        "ground_load_loss_penalty",
+        "support_loss_penalty",
+        "double_support_penalty",
+        "expected_swing_contact_motion_drag",
+        "completed_placement_band",
+        "bilateral_symmetry",
+        "imbalance_growth",
+        "wrong_vx",
+        "wrong_vy",
+        "wrong_wz",
+        "quiet_joint_velocity",
+        "quiet_foot_stillness",
+        "quiet_contact_loss"
+      ],
+      "_PENALTY_METRIC_NAMES": {
+        "swing_contact_penalty": "swing_contact"
+      },
+      "_U13_METRIC_KEYS": [
+        "u13/raw_support_transfer_completion",
+        "u13/reward_gated_support_transfer_completion",
+        "u13/side_change_after_raw_transfer_completion",
+        "u13/side_change_without_raw_transfer_completion",
+        "u13/bootstrap_expected_side_initialization",
+        "u13/expected_side",
+        "u13/eligible_touchdown_events",
+        "u13/transfer_completion_events",
+        "u13/transfer_timeout_events",
+        "u13/precursor_reward_actual_in_window",
+        "u13/precursor_reward_actual_on_timeout",
+        "u13/timeout_penalty_actual",
+        "u13/aborted_window_net_reward_actual",
+        "u13/track_planar_raw",
+        "u13/track_yaw_raw"
+      ],
+      "_U13_PRECURSOR_TERMS": [
+        "touchdown_load_acceptance",
+        "post_touchdown_stability",
+        "support_transfer_progress"
+      ]
+    }
+  }
+}

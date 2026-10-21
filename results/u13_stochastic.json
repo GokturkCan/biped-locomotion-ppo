@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "horizon_s": 20,
+  "single_support_percent": 28.61,
+  "alternating_touchdowns": 22.99,
+  "support_transfers": 23.73,
+  "falls": 0,
+  "same_side_repeats": 0,
+  "transfer_timeouts": 0,
+  "net_displacement_m": 0.03,
+  "mean_body_vx_m_s": 0.0012,
+  "interpretation": "stochastic gait retained; command tracking not established",
+  "training_transitions": 20480000,
+  "initialization": "fresh actor/critic/optimizer/normalizer; no checkpoint restore",
+  "evidence": "Historical canonical research summary; not rerun during migration"
+}

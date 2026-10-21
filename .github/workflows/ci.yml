@@ -8,7 +8,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install -e '.[test]'
+      - run: python -m pip install -e '.[test,deploy]'
       - run: python -m pytest -q
       - run: python tools/smoke_test.py
       - run: python tools/scan_release.py
+  native:
+    # Software-contract tests of the C++ runtime on synthetic data. ONNX Runtime and SDL2 are
+    # not installed here, so the ONNX wrapper test, gamepad test and the closed-loop app are
+    # not built in CI (see native/v24_runtime/README.md for the full local build).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install mujoco==3.6.0
+      - name: Configure
+        run: |
+          MJ=$(python -c "import mujoco, os; print(os.path.dirname(mujoco.__file__))")
+          cmake -S native/v24_runtime -B build_native -DMUJOCO_ROOT="$MJ"
+      - run: cmake --build build_native -j2
+      - run: ctest --test-dir build_native --output-on-failure

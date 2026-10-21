@@ -4,6 +4,13 @@ from pathlib import Path
 import re, json, sys
 
 
+def _signature_hit(signature, line):
+    """XML-tag signatures match tags only, not C/C++ includes such as <mujoco/mujoco.h>."""
+    if signature.startswith("<"):
+        return re.search(re.escape(signature) + r"(?=[\s>]|/>)", line, re.I) is not None
+    return signature.lower() in line.lower()
+
+
 def scan(root):
     root = Path(root)
     findings = []
@@ -117,7 +124,7 @@ def scan(root):
                     {"path": str(rel), "kind": "model_or_trajectory_columns"}
                 )
         for i, line in enumerate(s.splitlines(), 1):
-            if any(x.lower() in line.lower() for x in signatures):
+            if any(_signature_hit(x, line) for x in signatures):
                 findings.append(
                     {"path": str(rel), "line": i, "kind": "restricted_signature"}
                 )

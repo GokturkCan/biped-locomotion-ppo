@@ -1,0 +1,21 @@
+{
+  "joint_names": ["REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME",
+                  "REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME", "REPLACE_ME"],
+  "sensors": {
+    "orientation": "REPLACE_ME",
+    "gravity": "REPLACE_ME",
+    "local_linvel": "REPLACE_ME",
+    "gyro": "REPLACE_ME",
+    "root_pos": "REPLACE_ME"
+  },
+  "geoms": {
+    "floor": "REPLACE_ME",
+    "left_foot": "REPLACE_ME",
+    "right_foot": "REPLACE_ME"
+  },
+  "root_body": "REPLACE_ME",
+  "action_scale": [null, null, null, null, null, null, null, null, null, null, null, null],
+  "initial_qpos": [null],
+  "target_height": null,
+  "min_root_height": null
+}

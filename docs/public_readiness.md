@@ -1,5 +1,11 @@
 # Final public-readiness checks
 
+Historical review snapshot, preceding the stricter effort-data boundary. The per-channel
+effort CSV was subsequently removed from the current tree because anonymization still
+exposed model structure. Earlier commits retain that file: a normal deletion commit does
+not purge Git history. Public visibility therefore requires a separate decision about
+removing that historical artifact; this follow-up does not rewrite history.
+
 ## Scope and presentation
 
 The final pass changes documentation only. Python/native implementations, public profiles

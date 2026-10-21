@@ -81,7 +81,6 @@ results/README.md
 results/u13_deterministic.json
 results/u13_reward_breakdown.csv
 results/u13_stochastic.json
-results/v24_effort_summary.csv
 results/v24_summary.json
 src/biped_locomotion/__init__.py
 src/biped_locomotion/analysis/__init__.py

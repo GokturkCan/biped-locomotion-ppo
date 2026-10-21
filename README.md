@@ -208,9 +208,10 @@ not claimed. [Full U13 findings and reward accounting](docs/u13_findings.md).
 
 The method uses **`qfrc_actuator` only**, sampled at **500 Hz**, to compute peak absolute,
 p99 absolute and RMS generalized effort. Revolute joints use **N·m**; prismatic joints use
-**N**. Public data contain anonymized aggregates, not raw trajectories, private mappings
-or limits. These are simulation generalized efforts, **not motor-sizing specifications**.
-[Methodology](docs/actuator_effort.md) · [Aggregate results](results/v24_effort_summary.csv).
+**N**. Public documentation retains the methodology and high-level interpretation;
+per-channel measurements, joint-type/order information, private mappings and raw trajectories
+are withheld. These are simulation generalized efforts, **not motor-sizing specifications**.
+[Methodology and public boundary](docs/actuator_effort.md).
 
 ## Repository structure
 

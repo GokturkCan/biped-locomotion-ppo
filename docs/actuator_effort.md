@@ -6,9 +6,11 @@ For every mapped scalar joint, report peak absolute, p99 absolute and RMS from t
 stream. Revolute joints use N*m; prismatic joints use N. The historical collection rate
 was 500 Hz. Joint identifiers/DOF indices come from private runtime bindings.
 
-`results/v24_effort_summary.csv` contains only anonymized aggregate channels, type, units,
-sample counts and effort statistics. It excludes raw trajectories, joint names, ranges,
-force limits, positions, timing extrema and model mappings. No raw 500-Hz dataset is included.
+Public documentation retains only the methodology and high-level interpretation.
+Per-channel effort summaries are withheld: anonymized labels can still expose actuation
+structure through channel count, ordering and joint types. No replacement per-channel
+table, raw 500-Hz stream, model mapping, limit or reference-pose data is distributed.
+This more conservative data boundary does not change the historical research claims.
 
 These are simulated generalized actuator efforts, not hardware motor requirements.
 Transmission, efficiencies, thermal/current limits, final physical parameters and hardware

@@ -1,0 +1,8 @@
+{
+  "required_private_fields": [
+    "action_scale",
+    "min_root_height",
+    "target_height"
+  ],
+  "note": "Provide values in ModelSpec.environment_metadata. No values are distributed."
+}

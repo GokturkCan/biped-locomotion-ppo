@@ -1,0 +1,61 @@
+{
+  "scope": "CPU public contracts and research presentation only; no physics/training/evaluation/rendering",
+  "checks": [
+    {
+      "check": "installed_import",
+      "passed": true,
+      "command": "$REVIEW_ENV/bin/python -I -B -c 'import biped_locomotion,pathlib,sys; p=pathlib.Path(biped_locomotion.__file__).resolve(); assert p.is_relative_to(pathlib.Path(sys.prefix)); print('\"'\"'Installed package import passed'\"'\"')'"
+    },
+    {
+      "check": "dependency_consistency",
+      "passed": true,
+      "command": "$REVIEW_ENV/bin/python -I -B -m pip check"
+    },
+    {
+      "check": "synthetic_smoke",
+      "passed": true,
+      "command": "$REVIEW_ENV/bin/python -I -B $REPO/tools/smoke_test.py"
+    },
+    {
+      "check": "v24_config_only",
+      "passed": true,
+      "command": "$REVIEW_ENV/bin/python -I -B $REPO/tools/train.py --config $REPO/configs/v24_forward.yaml"
+    },
+    {
+      "check": "u13_config_only",
+      "passed": true,
+      "command": "$REVIEW_ENV/bin/python -I -B $REPO/tools/train.py --config $REPO/configs/u13_scratch.yaml"
+    },
+    {
+      "check": "unchanged_source_configs_results_tests_tools",
+      "passed": true,
+      "files_compared": 97
+    },
+    {
+      "check": "installed_code_and_data_identity",
+      "passed": true,
+      "files_compared": 69
+    },
+    {
+      "check": "pytest",
+      "passed": true,
+      "passed_tests": 27,
+      "skipped_tests": 0,
+      "duration_seconds": 3.48,
+      "command": "$REVIEW_ENV/bin/python -I -B -m pytest $REPO/tests -q -p no:cacheprovider"
+    }
+  ],
+  "link_check": {
+    "passed": true,
+    "local_targets_checked": 55,
+    "scope": "Markdown relative file/directory targets and heading anchors; external URL availability not tested"
+  },
+  "release_scan": "passed; zero findings in final assembled working tree",
+  "not_run": [
+    "Private-model trajectory parity",
+    "Training",
+    "Physical evaluation",
+    "Video rendering"
+  ],
+  "publication_gate": "Owner confirmation of research-code and aggregate publication rights; no license to the private model is implied."
+}

@@ -1,0 +1,29 @@
+{
+  "files_scanned": 131,
+  "total_bytes": 670863,
+  "largest_files": [
+    {
+      "bytes": 84499,
+      "path": "src/biped_locomotion/evaluation/source_metrics.py"
+    },
+    {
+      "bytes": 50219,
+      "path": "docs/extraction_manifest.json"
+    },
+    {
+      "bytes": 40113,
+      "path": "src/biped_locomotion/commands/process.py"
+    },
+    {
+      "bytes": 38440,
+      "path": "src/biped_locomotion/rewards/acquisition_kernels.py"
+    },
+    {
+      "bytes": 38337,
+      "path": "src/biped_locomotion/environments/u13_lifecycle.py"
+    }
+  ],
+  "findings": [],
+  "passed": true,
+  "limits": "Pattern-based text/file scan; not a proof of ownership or absence of all possible sensitive data."
+}

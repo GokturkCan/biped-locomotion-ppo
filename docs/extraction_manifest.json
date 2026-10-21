@@ -1,0 +1,1012 @@
+{
+  "method_count": 107,
+  "source_revision": "462053ac3db62156a708dceb29be9375f16b07e8",
+  "source_files": {
+    "walking.py": "fea6f17ea70843461cc0a46a74df15bf87912f385b9165caa04dc92a45d09b6f",
+    "unified_v1.py": "62fdd2202482d656ce105ad21a401846a6249a812e54c2e4c3e8384f60997ab1",
+    "unified_command_process.py": "00fd0282c01ba4dde34866cfcbb77bf08d20348a09f355c4f675f2f35ca3671e",
+    "unified_v1_config.py": "ca832ce93719471d0d4189a148e143645d21956018b6a49bed91d0be62f4ff6c",
+    "wrapper.py": "23c072737b9895c52d61372d67f5359c77613f71a4f363f80681ac48ba79aa3d",
+    "command_transform.py": "3c9958087a3bb52c75574878fee43e3603a41bd59c217fc9a455c6f9fd102a8b",
+    "unified_networks.py": "e9d25e034aee216c991014972dc8394ea3f5583d2748d42dd92b3d73347a4340"
+  },
+  "adaptations": [
+    "Explicit ancestor dispatch replaces super() and direct ancestor calls.",
+    "Joint/body/geom names and initial qpos are supplied by ModelSpec.",
+    "Research configs resolved without importing model or running physics.",
+    "Private action scale and geometry-dependent settings removed from public defaults.",
+    "Inactive excessive_clearance coefficient zeroed; active reward return path unchanged.",
+    "Unreachable setup assignments were removed.",
+    "Source joint-name suffix conventions replaced by runtime semantic side roles.",
+    "U13 disabled teacher is an inert stub; assisted policy support is intentionally absent. Teacher-only diagnostic channels are not parity claims.",
+    "NumPy qualify_foot is the same scalar liftoff/touchdown kernel, backend-adapted for public CPU tests.",
+    "Runtime actuator order is validated against model storage order.",
+    "Retained MJX-specific cached-data auto-reset wrapper; generic Brax pipeline_state wrapper is incompatible.",
+    "Optional runtime reference_pose_mapping is resolved into the private full reference vector before setup.",
+    "Final review: U13 observation helper critic order corrected to match the retained runtime; U13 kernel docstring clarifies 64/89 including reserved zeros. Runtime equations unchanged.",
+    "Final review added synthetic checks for retained V24/U13 observation layouts and clarified bootstrap-timeout semantics; no runtime algorithm changes."
+  ],
+  "methods": [
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnload._foot_unload_terms",
+      "source_line": 3081,
+      "destination": "rewards/common_kernels.py",
+      "function": "FootUnload__foot_unload_terms",
+      "source_ast_sha256": "c6bd39d071bba633f39787d472fb84864a589567713033076f54ded327afd147",
+      "adapted_ast_sha256": "e587ce461761ec8c5a0455b69e79fc86b88853a30fadbab748f20c699f3a168e"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnload.reset",
+      "source_line": 2915,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "FootUnload__reset",
+      "source_ast_sha256": "45698f3c9c01a4d5b037a0966172e2ede9ea9d58d76f3f0100abbc98f22c38aa",
+      "adapted_ast_sha256": "11a197f0621b124d6910fbdaa4b3a3f4dbfb564c52c6c166eb01a63f8d986c17"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnloadBridgeLiteV0._bridge_phase",
+      "source_line": 3840,
+      "destination": "gait/phase_kernels.py",
+      "function": "FootUnloadBridgeLiteV0__bridge_phase",
+      "source_ast_sha256": "d6c175f8561111d4e4b8e825bb5deccd24dee9f3ea7c5c2b91f9f835c8dedced",
+      "adapted_ast_sha256": "bb00543da4bfdb6011e2d516cb56edc11c2340dadd5eb7ec1d0b4067542d83fc"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnloadBridgeLiteV0.reset",
+      "source_line": 3828,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "FootUnloadBridgeLiteV0__reset",
+      "source_ast_sha256": "16a39ea1aa0732f8aefc540a76ce6b2f5c16dd6021a215cec765d61842e5f4bd",
+      "adapted_ast_sha256": "cb77dde51b497fde81dcb152578f2af319f08d3ea4bf501cec030a7a42fa9d60"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnloadV2._foot_unload_terms",
+      "source_line": 3384,
+      "destination": "rewards/common_kernels.py",
+      "function": "FootUnloadV2__foot_unload_terms",
+      "source_ast_sha256": "977294bacac30aafa2aa19b866f94f932eb8870eff5077dc3e2874904f1d14df",
+      "adapted_ast_sha256": "d1a28306a95ae6f5c95dbb1f9dd24279fd7e77846523a82881c693a8cbd27633"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnloadV2._post_init",
+      "source_line": 3319,
+      "destination": "environments/setup.py",
+      "function": "FootUnloadV2__post_init",
+      "source_ast_sha256": "e9193efafe9ad50a7d56ec8921f9b06433b62ef564818673545a790c8b841cfb",
+      "adapted_ast_sha256": "c4e48d999a04a4ca8c9343ecf70c4931aae7e5b8333cc174c3735a35b48a10ac"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "FootUnloadV2.reset",
+      "source_line": 3326,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "FootUnloadV2__reset",
+      "source_ast_sha256": "a36397bd81b2d7062a378208593264995ca9797149f1bc5426bbaf25ee6ce19e",
+      "adapted_ast_sha256": "cdf30387382de03438b43542de030cce58771795fce52b48d6fe479de68ac776"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV1._forward_yaw_from_quat",
+      "source_line": 7365,
+      "destination": "environments/shared_helpers.py",
+      "function": "ResidualForwardWalkingV1__forward_yaw_from_quat",
+      "source_ast_sha256": "cea0362d69d74ea73069a765d9fcbeafeda8a635a0c183b89ff525e1add0623f",
+      "adapted_ast_sha256": "e59f8ceea38703f48cc369e0c08ad472b6d002cd393fb591663cdfee3a88cd42"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV1._post_init",
+      "source_line": 7198,
+      "destination": "environments/setup.py",
+      "function": "ResidualForwardWalkingV1__post_init",
+      "source_ast_sha256": "a705eb93aa4678d278e70837c2e0d746e2f6302d8b93819f362610de4adcac88",
+      "adapted_ast_sha256": "30cc6865c2b418a899e20b729d455359447d282d5dbe8e3a48350e7ebb076b35"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV1.reset",
+      "source_line": 7324,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV1__reset",
+      "source_ast_sha256": "a7ae92c0945dd9bf8619254e115100f382d0e489515768c8668c35ce5077a87d",
+      "adapted_ast_sha256": "45e3ef1664c05a0f131a428c55ffcf51a963cf26847ab84e42c0d81f3e0f17ef"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV13._empty_metrics",
+      "source_line": 13210,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV13__empty_metrics",
+      "source_ast_sha256": "082147e074cf57af2572ecbf39b5840aa6910718f548dd4b83927f2480b763bf",
+      "adapted_ast_sha256": "db330bea431b9bf2006be248a4d4d723210aceec309fc70f60320b1ff0bff72d"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV13._update_metrics",
+      "source_line": 13226,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV13__update_metrics",
+      "source_ast_sha256": "db20fa4168f5c21e2a2cbc330dcc1bbf693e8090c05637352ea8555e1ec3e4a4",
+      "adapted_ast_sha256": "14739e5a6965d1824ab17a595ca7d9b90f916b991e9fee9fad9732df244cdbaf"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV13._v9_components",
+      "source_line": 13174,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV13__v9_components",
+      "source_ast_sha256": "89a4e9d7036c1078a703bacc2c160887cf2dfd86380d26a5acb817a0d3ca6811",
+      "adapted_ast_sha256": "fa69d88639fdbb62adf0900da058ff66575c3b1f3da08d7cf5863dfe033e149c"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV16._empty_metrics",
+      "source_line": 13702,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV16__empty_metrics",
+      "source_ast_sha256": "dba045bb7358a841c11483d9a38ffc00e9280bd31f1f3df8d2ca7d4c31e82864",
+      "adapted_ast_sha256": "f1a91aa14c81e6041cd28cc9d48adf7c7a2ca5851a692ac42067847858294b63"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV16._update_metrics",
+      "source_line": 13718,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV16__update_metrics",
+      "source_ast_sha256": "8f8d684c7104a2cede4c1e867e998c6a2cdb34bf9775477da16ad62b6dd6fa88",
+      "adapted_ast_sha256": "bc0a804f8c3c9ebaad2c4775e74dcf313de363a1a6e0fd09227aa78ea46cc94a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV16._v9_components",
+      "source_line": 13553,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV16__v9_components",
+      "source_ast_sha256": "0546286a1c5cf74bde3b47f980c97fcc3dd6500a328b46cbdeb256b415a61001",
+      "adapted_ast_sha256": "bdd74299d2ae4a4548318c8d55881ff7b9915b9f08ab1d9325392a3b31e37b42"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV16.reset",
+      "source_line": 13507,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV16__reset",
+      "source_ast_sha256": "3f69fe7fc781777bc30aac8fb332afa24bf750283084db2279d55523a80e8f25",
+      "adapted_ast_sha256": "2dd966c867ba590d48a43c2eafa2f0fb13dadf55fe25ad296203bc96598fd4ca"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18._empty_metrics",
+      "source_line": 14283,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV18__empty_metrics",
+      "source_ast_sha256": "ad29582ff1c915c53b82f771a496fc23089d58e41722330a9001d4771e5a7623",
+      "adapted_ast_sha256": "7dc8856d7948d0fa27cb0b6fe258c528fdeeef04330e457f83e49ea2c1a87c76"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18._update_metrics",
+      "source_line": 14314,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV18__update_metrics",
+      "source_ast_sha256": "8237226fb7196534aa70c06ba5b0935904368a2faac42c0c2ffac2c46a3b0d71",
+      "adapted_ast_sha256": "37bbe0444ccf90662999fbbb83c04764e3f03ce8e2bb1cfc78603829cf7605fd"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18._v18_apply_phase",
+      "source_line": 13982,
+      "destination": "gait/phase_kernels.py",
+      "function": "ResidualForwardWalkingV18__v18_apply_phase",
+      "source_ast_sha256": "0eb90cf6df8f2ad1918bbf3a6397b9234060ccc1779a680814211ce0060d6637",
+      "adapted_ast_sha256": "496a462fa096de87f0aa3f235aa2dc6a4d670eeab2df536e09187d83f48311bf"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18._v18_event_phase",
+      "source_line": 13851,
+      "destination": "gait/phase_kernels.py",
+      "function": "ResidualForwardWalkingV18__v18_event_phase",
+      "source_ast_sha256": "66267238ec13b6dbbc37ab697a5f28a47dc0cdbd687810b8e3bef57e19a04d89",
+      "adapted_ast_sha256": "8731a0cd79b77f5e6204c352a3b62264604b6744ecb19c5177017f018c7a0d5a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18._v18_legacy_phase",
+      "source_line": 13826,
+      "destination": "gait/phase_kernels.py",
+      "function": "ResidualForwardWalkingV18__v18_legacy_phase",
+      "source_ast_sha256": "867abf56bc2bf4e109295d31af4f5178bf83e16d49a958bd91d84bd22e3ff8d5",
+      "adapted_ast_sha256": "4a0e3c3c437ea8d69c8bf111504dc7cb609d386451bbf2a01023c3971f909a5d"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18.reset",
+      "source_line": 13994,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV18__reset",
+      "source_ast_sha256": "0010708118385494c22653dc8271b4fafbfe1d166b09f21a3577988a8563e5a3",
+      "adapted_ast_sha256": "e61307c06ed568d9fe25a54b09cef033250a748652503bce036da3f7d2f8a25c"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV18.step",
+      "source_line": 14012,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV18__step",
+      "source_ast_sha256": "dc01a8133e9fe3263208a40452889273b7c71c65b0b77569e312f2a750c51f7e",
+      "adapted_ast_sha256": "e02d02936709f6fa0f92e1e10b5773a35e4359bda37e5262b260c725d786adc6"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV19._v9_components",
+      "source_line": 14467,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV19__v9_components",
+      "source_ast_sha256": "83bcd4fc1359c05b0cb57f387fd4dc98d6da2c74cb949bcf80e228c671f95f8f",
+      "adapted_ast_sha256": "baa5f514015735e7d890844804f718428739ae950d052720d57026097a56fa3b"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV2._empty_metrics",
+      "source_line": 7898,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV2__empty_metrics",
+      "source_ast_sha256": "05cd9b874f5ec49ee8f5535baa0ea35e621ed9ac54866b6b83ec21b1838a788d",
+      "adapted_ast_sha256": "f99c7f0585acc1660d2e7bde527d216833f52166354ced959a7250e97d89a698"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV2._get_obs",
+      "source_line": 7830,
+      "destination": "observations/v24_kernels.py",
+      "function": "ResidualForwardWalkingV2__get_obs",
+      "source_ast_sha256": "b41003b13f3ba5c9b1c1408f277978bc67e06383a3f8bf6d6340011e621571a4",
+      "adapted_ast_sha256": "eed6d90e2f8ab70f9594843174deb63a8cac13f06eacaa50366222e7a32a57a0"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV2._q_ref_phase",
+      "source_line": 7770,
+      "destination": "control/source_kernels.py",
+      "function": "ResidualForwardWalkingV2__q_ref_phase",
+      "source_ast_sha256": "5b0f2102e8e4768ed8e974b792a7ab5217853f74df69849b49e327b9a77ec239",
+      "adapted_ast_sha256": "49d67829095d1b339af53f6a5596c5899d77c42fb4811b531596a08b115cf055"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV2._update_metrics",
+      "source_line": 7938,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV2__update_metrics",
+      "source_ast_sha256": "fd2e732195b435b154146b1121a1d0de1555762ad45a1224d8b6abd2429bf4c7",
+      "adapted_ast_sha256": "e8123826cdf4c00b034e0f5983f07e7d6fb7192085bd3c62d35a2f30471f4d63"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV2._v3_control_law",
+      "source_line": 7797,
+      "destination": "control/source_kernels.py",
+      "function": "ResidualForwardWalkingV2__v3_control_law",
+      "source_ast_sha256": "44556888e7afb8f30c70ebb1d3d5c12b248d2ec4729e27d882d5d4f3ed0e141f",
+      "adapted_ast_sha256": "e5a22eea6b0c2652f69db5c9e01b362eade0b42ed60de246fa0cf18013c89c31"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV20._empty_metrics",
+      "source_line": 14572,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV20__empty_metrics",
+      "source_ast_sha256": "09a954718226390d1b41768d4bd3f58d71bfaebd9e12b3106522e24e00747a89",
+      "adapted_ast_sha256": "c1644b12aa05c92094dd04728b83fdbb131a9dae0c9b14d00bfd1a9bfd6995fc"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV20._update_metrics",
+      "source_line": 14589,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV20__update_metrics",
+      "source_ast_sha256": "ae2e1cc43377e30c0599a95ff241688ccbdf529d66593bb7f95d3d53d37adb7b",
+      "adapted_ast_sha256": "d8d858c57e67bc7d600382bff7092e9f237a831222f9e5378b744d39088d6fbc"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV20._v9_components",
+      "source_line": 14509,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV20__v9_components",
+      "source_ast_sha256": "962fa11607ad6658295826ddb94ec04836dc52b47dc3610959fcfee98e7266ea",
+      "adapted_ast_sha256": "113120b056ab99741c5c2f59363ef9e1f9e7e29656e7d211a89adf1b75f5d1da"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV21._v9_components",
+      "source_line": 14675,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV21__v9_components",
+      "source_ast_sha256": "1d08626b1651662ae0c5de8d242bda24af9bbcc0088ef95ec15244b01831a1a5",
+      "adapted_ast_sha256": "352914641cd01e780b7eca8b0834f32fad4641c68dbd61ee66b71737a0e92f6b"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV22._get_obs",
+      "source_line": 14716,
+      "destination": "observations/v24_kernels.py",
+      "function": "ResidualForwardWalkingV22__get_obs",
+      "source_ast_sha256": "2da62f242fee37f9805212985bd5270a84bab700267e419de12a9d8aab8f75f0",
+      "adapted_ast_sha256": "91dff2aad5862e0840b1fdfc2a3ff0afa649acaec4a56daf8e93010b02facd82"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV23._v9_components",
+      "source_line": 14779,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV23__v9_components",
+      "source_ast_sha256": "ae73daf17bfdd762478087a7bdc076c75e24965d8be96993f4531d6189eba1e3",
+      "adapted_ast_sha256": "408dcd42c1fd57c7f21ee46efa60ff0cc1553982912f67e01b5069810bff7dda"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV24._get_obs",
+      "source_line": 15000,
+      "destination": "observations/v24_kernels.py",
+      "function": "ResidualForwardWalkingV24__get_obs",
+      "source_ast_sha256": "2d1d9aab2e455da4422eee17777c61dc46530f59e442774e61ad959017e29489",
+      "adapted_ast_sha256": "68c2e617acb96a494016e090cfc60eaebd4526ac6de18f199404858612677307"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV24._v9_components",
+      "source_line": 14937,
+      "destination": "rewards/forward_kernels.py",
+      "function": "ResidualForwardWalkingV24__v9_components",
+      "source_ast_sha256": "59919c199e3bde1219108d496b0065fce04de78ebc8179447153a073b55daa4a",
+      "adapted_ast_sha256": "56bb910d00e1acb1f5f283dc395ef8fa069f03491333cf78ce3108083ca211b9"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV24.reset",
+      "source_line": 14899,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV24__reset",
+      "source_ast_sha256": "7747b4ae40191357471ea3346d71967f7f9c41b1681df2abc064a4f1e8a1fac1",
+      "adapted_ast_sha256": "cb23711d35e426b987e36f492444109aec59371f9dbc0c535843b759e96490b3"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV24.step",
+      "source_line": 14910,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV24__step",
+      "source_ast_sha256": "5ac3d8edde2cf688df49259f7c71b288dc1500b355ed0873dfad1fe8b3c2474c",
+      "adapted_ast_sha256": "f5bff9440829bd52cabcfb5c8779d951be87a2903f5d5e6786651890b55ed7fc"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV4Force._foot_vertical_ground_reaction_forces",
+      "source_line": 8280,
+      "destination": "gait/contact_kernels.py",
+      "function": "ResidualForwardWalkingV4Force__foot_vertical_ground_reaction_forces",
+      "source_ast_sha256": "217e94f52a568b3c7372f6898981e0db30897a96f8aed64bcd02831a3f37e67e",
+      "adapted_ast_sha256": "47b4be534a5a1c27bd6a6a70817e59a1d9207894e188641475670bfbf81ee630"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV5.reset",
+      "source_line": 8581,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV5__reset",
+      "source_ast_sha256": "178a10294b66fdb1effe0fe9c064cf04cd60ac89697c3348db5fdf4103e46499",
+      "adapted_ast_sha256": "f446de044d36ad89113a4d7274523a4dd3e4b9288032129cbb01c2c2e6285ea2"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV6._empty_metrics",
+      "source_line": 9549,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV6__empty_metrics",
+      "source_ast_sha256": "f15bc762bf27cee71d9b01db0345c0516d0e95c89f9c4606139608549604f7b0",
+      "adapted_ast_sha256": "c24c65103c0d878dac52644ed097a9ac489d1a16dd86fabd9082cfad5efd53a6"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV6._forward_terms",
+      "source_line": 9500,
+      "destination": "rewards/common_kernels.py",
+      "function": "ResidualForwardWalkingV6__forward_terms",
+      "source_ast_sha256": "744e1b27b5771a0d930724211c698c5abd1157d2e062418f7f637e3cb0bf9baa",
+      "adapted_ast_sha256": "71adcdf68a949d0d5ed32cf9cc6bc371809819b766ae3a54c61136c42b51bc49"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV6._update_metrics",
+      "source_line": 9593,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV6__update_metrics",
+      "source_ast_sha256": "f6ab5663041dee1105a93d9d73f6009d86259d9cc0b40586fab2066512234d5c",
+      "adapted_ast_sha256": "7bf4ce2c0ad0f8689058f68eb1dc6ae4dbdc766a5eeebf8e1fe542ef0da0b594"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV6._v6_components",
+      "source_line": 9239,
+      "destination": "rewards/acquisition_kernels.py",
+      "function": "ResidualForwardWalkingV6__v6_components",
+      "source_ast_sha256": "2f34a2f710db05818aaf7d4e5b99d70966cc6f60116a54fdfe852621e3eff343",
+      "adapted_ast_sha256": "b702c83f3a85ee4b5440aa8add7384cacdbc59d63806b9f077a6c9b1c21cd595"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV6.reset",
+      "source_line": 9213,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV6__reset",
+      "source_ast_sha256": "53c18a61d4e33b76c58ab3707c5a2d243a1d12e255c2b4adba7be75410fb4600",
+      "adapted_ast_sha256": "eb981ebf8686fdec408711d1d3fed5a644fc45f0fcdfebd27500c97ec3983eca"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV7._empty_metrics",
+      "source_line": 9953,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV7__empty_metrics",
+      "source_ast_sha256": "95a69d2b5f27c81638fb09bffd4b5685e442edf894fc3800eeb76292d1163880",
+      "adapted_ast_sha256": "3cd38f640c2802e777d01cb925d5b30d5d3638ba40f9048e8c510879ec204236"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV7._update_metrics",
+      "source_line": 9983,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV7__update_metrics",
+      "source_ast_sha256": "3623cf1fe6938c0b815c2a61c59346a84bec089ec3f3319fa813c77cf24ed0b0",
+      "adapted_ast_sha256": "0d5e9b4031f9b626752e40220379a80f8ac9e9b7c42643c0c55a178cac4a0d2f"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV7._v7_components",
+      "source_line": 9802,
+      "destination": "rewards/acquisition_kernels.py",
+      "function": "ResidualForwardWalkingV7__v7_components",
+      "source_ast_sha256": "fbbffeacf88ec2cd35d85209f993142dee903b12c36f29634cb36b01af1db7b0",
+      "adapted_ast_sha256": "84f731150f62bda6f1bf60788df20691b5e8b87f6fe4aa042ab6e87dec9c4f64"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV7.reset",
+      "source_line": 9773,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV7__reset",
+      "source_ast_sha256": "29d15e1511c619fc192122ab297aadc86aba225d3623f6c00170f40f2614b2d2",
+      "adapted_ast_sha256": "8355edc957bd363805465856f5446cbcaf2c37c9cf5a01f2aea3be8145ec0789"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8._empty_metrics",
+      "source_line": 10513,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV8__empty_metrics",
+      "source_ast_sha256": "4439d102f16d2f05dd4ba39b8f48136a92a6bd30fc59341b0044c899a837e384",
+      "adapted_ast_sha256": "6d333199e8757aa6f3a4e7db35de3ba39a1afff863f0b190dfeaa8a4b13fea0e"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8._get_reward",
+      "source_line": 10494,
+      "destination": "rewards/common_kernels.py",
+      "function": "ResidualForwardWalkingV8__get_reward",
+      "source_ast_sha256": "bdfaef9b8f3ce109f3fba368be7f981e424492ce3a5f1cbe619a2a552661d9ae",
+      "adapted_ast_sha256": "829acdade479f21dbc4dfef81cea595415883601a1ec7c9c6ac0bb385b3a3ef1"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8._update_metrics",
+      "source_line": 10550,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV8__update_metrics",
+      "source_ast_sha256": "711c7a7d2052e9d033f665042caba683bcc5e116cf4f3af57a31db9ce2323534",
+      "adapted_ast_sha256": "2240a0594713c2058c4f9206d48cc4746e480dc4a55c05951c383406f8fca04a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8._v8_components",
+      "source_line": 10254,
+      "destination": "rewards/acquisition_kernels.py",
+      "function": "ResidualForwardWalkingV8__v8_components",
+      "source_ast_sha256": "a83fbbd7615a0353ef969739aa0cb56864201d975e7eef5bfd6f77cf197cd931",
+      "adapted_ast_sha256": "77099cec833411986f97994bfa67322dcf1083180d9604138041d9108865b38e"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8._v8_liftoff_touchdown_state",
+      "source_line": 10185,
+      "destination": "environments/shared_helpers.py",
+      "function": "ResidualForwardWalkingV8__v8_liftoff_touchdown_state",
+      "source_ast_sha256": "d91a66d8639bf1c8f72e844d6a598c9c1018f07bc4fc6f12a0ad524ed181a74c",
+      "adapted_ast_sha256": "fa6e54f3109e4990aa4df76074b892da5ad9412fbf682dc9bc6c76fbaeff6856"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV8.reset",
+      "source_line": 10107,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV8__reset",
+      "source_ast_sha256": "cc98000b75d68cc189cc9b494adddf28704d4991311b8a155f70078d8cb5d649",
+      "adapted_ast_sha256": "0628d9a6efa1eaf8624623fd0489e4e1974008328be7b479e4ab72906601c519"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._empty_metrics",
+      "source_line": 11257,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV9__empty_metrics",
+      "source_ast_sha256": "e54c9519ad8d81bc84504d6e0c612336f576ef3bf405276cd0aa963742d5223c",
+      "adapted_ast_sha256": "e439af2c0295b2cb692fc47591abd322b1a0bac40ddef178b4992132144d8799"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._update_metrics",
+      "source_line": 11277,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualForwardWalkingV9__update_metrics",
+      "source_ast_sha256": "9fced3183de82606af120ac1290901ae96f8c7fc2779c9d32f5d7a107104a4de",
+      "adapted_ast_sha256": "7bc2a3189ff94bcb4cd02f70d4d9a862dc7d01a1d1e5653cabbfa87322986349"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._v8_components",
+      "source_line": 11247,
+      "destination": "rewards/acquisition_kernels.py",
+      "function": "ResidualForwardWalkingV9__v8_components",
+      "source_ast_sha256": "e06cca862ce5f806654cd457b72434bb602308e8091f480c8795aeefb4bdec38",
+      "adapted_ast_sha256": "65c74881cfb173f9a6eed601c78d1dae968cb5e114220200507b7f9885fc7e48"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._v9_components",
+      "source_line": 10921,
+      "destination": "rewards/acquisition_kernels.py",
+      "function": "ResidualForwardWalkingV9__v9_components",
+      "source_ast_sha256": "3b04a2f785bef7d393cbba7909899457d1af15f6747e99be796537c086af5bc6",
+      "adapted_ast_sha256": "559780243058cd180cf6207c86056f9378fc4de12134b8c85f314155839ada01"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._v9_expected_side_gates",
+      "source_line": 10771,
+      "destination": "environments/shared_helpers.py",
+      "function": "ResidualForwardWalkingV9__v9_expected_side_gates",
+      "source_ast_sha256": "7e9005943c6c6ceeb03e65ecce9dfdacf212eee1e4397fa6b31f6f534e542f47",
+      "adapted_ast_sha256": "82d49fce05e037e2679c37be69f46db27c811c1a099d607192204fec163f7e63"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9._v9_positive_step_contributions",
+      "source_line": 10785,
+      "destination": "environments/shared_helpers.py",
+      "function": "ResidualForwardWalkingV9__v9_positive_step_contributions",
+      "source_ast_sha256": "a62b8a40a5d3fccfcb4d6dc0207bd8c52f1f870003a468e71dbe16ce643cc7a1",
+      "adapted_ast_sha256": "4f313d0289662254283992a47c509581cacdd3374bb56f7aeb3fb936203c7200"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualForwardWalkingV9.reset",
+      "source_line": 10723,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualForwardWalkingV9__reset",
+      "source_ast_sha256": "2fa7f00cd827ca3427071015bf3945eb7b0b0bcb52c462db3951beb16856aada",
+      "adapted_ast_sha256": "b66b90c0a543a21959cf1afc262edd6137e6091f6345f32cf6afd57b428c6f07"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1._empty_metrics",
+      "source_line": 4949,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualSteppingInPlaceV1__empty_metrics",
+      "source_ast_sha256": "a16e934b958ffbb5f7a5338781e95232597e31c5a8e240f64176551efc7c778a",
+      "adapted_ast_sha256": "a9854b8c129f3f63aedee8c6ff88ebc1edee2e455f5712f048f91a05c5ba3b8a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1._foot_roll_pitch",
+      "source_line": 4557,
+      "destination": "gait/contact_kernels.py",
+      "function": "ResidualSteppingInPlaceV1__foot_roll_pitch",
+      "source_ast_sha256": "6fb1dc15af4fb6ee32ad31f339bb0aba883e70cbb6ab9faf742b0fc3254a7ff4",
+      "adapted_ast_sha256": "59886ea4daa309dd7ae770ee1a5ab28790aba80e498cff7fbd41d47b6ab45378"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1._post_init",
+      "source_line": 4497,
+      "destination": "environments/setup.py",
+      "function": "ResidualSteppingInPlaceV1__post_init",
+      "source_ast_sha256": "28eea5169c56218bb092c633f813b745cc33ae99edb579ac1fd6d6eaa925dd02",
+      "adapted_ast_sha256": "e8c57b103614d6eaceab168f24286d1e64e329366bbc30eef5ff9ab6a3bf6f4d"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1._stepping_phase",
+      "source_line": 4534,
+      "destination": "gait/phase_kernels.py",
+      "function": "ResidualSteppingInPlaceV1__stepping_phase",
+      "source_ast_sha256": "6eec2ee01f1b370a9e492d25d4e89e03b33b5669998f0d7bb1dd717ba2300161",
+      "adapted_ast_sha256": "3009093b838dfcc84ea98e95cde50759b867337e20a8c2a0d0d5662052c28087"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1._update_metrics",
+      "source_line": 4998,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualSteppingInPlaceV1__update_metrics",
+      "source_ast_sha256": "64e15bdc256e9c6fa9461fb8ba7083685e5a771e9f6d0a4c65ff7434b91827c4",
+      "adapted_ast_sha256": "dc298abc7f77d821b17d5271672288b9e404ba1865659210c86de4d8b3123e20"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV1.reset",
+      "source_line": 4583,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualSteppingInPlaceV1__reset",
+      "source_ast_sha256": "1a338f9ecc9b770f2d1aaa5c2456f522b7752ba854d29e5117770f15fe4a12a3",
+      "adapted_ast_sha256": "8f6dd2e3de8275ab3443f2970fa19f7c835308b40901e018f147a4e95afb6e70"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV3._contact_count",
+      "source_line": 5729,
+      "destination": "gait/contact_kernels.py",
+      "function": "ResidualSteppingInPlaceV3__contact_count",
+      "source_ast_sha256": "67731488d1dc767e18ef93ee17a437f21017dee32375b5f128eed3b2222a9d83",
+      "adapted_ast_sha256": "6c83de2c4dec87b9ad8a0951ede44004fc355ee2869c1aa6805aa95fe641f4c2"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV3._empty_metrics",
+      "source_line": 6022,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualSteppingInPlaceV3__empty_metrics",
+      "source_ast_sha256": "8cb2bdeedd97d063cb0a0f73a6abf9762b8cd2d5cc446d1f1f6ee87fcc3bf505",
+      "adapted_ast_sha256": "f67a8d8e5f326dc79f0d743542a3a498ef497d82b7433a7bedf4d9362d804c45"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV3._post_init",
+      "source_line": 5700,
+      "destination": "environments/setup.py",
+      "function": "ResidualSteppingInPlaceV3__post_init",
+      "source_ast_sha256": "5fd89158ed494363d7382a92191c25dc438cf27f0cfab3160952fc7a9fa8dcef",
+      "adapted_ast_sha256": "c230c1ea58a0009ebdd4a4d3b527f41ca8b50e642c36e7fb6002567622d8329c"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV3._update_metrics",
+      "source_line": 6049,
+      "destination": "evaluation/source_metrics.py",
+      "function": "ResidualSteppingInPlaceV3__update_metrics",
+      "source_ast_sha256": "66bcfcd94e36f3ebf3619f5fb906dc246ad73b532142442112a3d664c5192336",
+      "adapted_ast_sha256": "4020a932a4643cb5afe7961b96bedb419e4606769c1227023c62af9d6eb4d3d4"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV3.reset",
+      "source_line": 5710,
+      "destination": "environments/v24_lifecycle.py",
+      "function": "ResidualSteppingInPlaceV3__reset",
+      "source_ast_sha256": "f38d7f2b201bccbf1df16f2ca9d76a583aa20fea510be1926f3a283043c1db96",
+      "adapted_ast_sha256": "55b11f7217871f4e76c31de386fc8c0769bacc4a6abb17c7664528c528fcd67e"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "ResidualSteppingInPlaceV32._post_init",
+      "source_line": 6345,
+      "destination": "environments/setup.py",
+      "function": "ResidualSteppingInPlaceV32__post_init",
+      "source_ast_sha256": "07debe35f40dc10d9ea49586fa309bb3f6976bafb1e8d9481c98ade7b975aa1c",
+      "adapted_ast_sha256": "440022ae9c178df38b87d654e0a464b71db48f29e84ed037d56be6e3e8afd78e"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1.__init__",
+      "source_line": 694,
+      "destination": "environments/unified_setup.py",
+      "function": "SchaftUnifiedJoystickV1__init",
+      "source_ast_sha256": "0e3c2bcd986afca258635cf8aa2162535143f610929f29b9d9284864a0da541e",
+      "adapted_ast_sha256": "31b85be513647ee420e492d97de8ccf8efa4c5687195e4bc8e76d37f73bb4369"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._apply_canonical_start",
+      "source_line": 1969,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__apply_canonical_start",
+      "source_ast_sha256": "079443e07c8a23ef855a653f85dc6b889fec32c1a30274d2a0f801229adb5e7e",
+      "adapted_ast_sha256": "a4819f60ecd12d3f717beea7547800469630107bb8272a8d995ae210f6991155"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._apply_quiet_freeze",
+      "source_line": 2007,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__apply_quiet_freeze",
+      "source_ast_sha256": "de24240a82bf21ed62cc243664654fc13e2dd8aa90d2bb4d3ebf6e94cadde98f",
+      "adapted_ast_sha256": "72430d30699fb2d03447517f56cba3f98601a6eb3d8cf9ae381f7ace3a29fe96"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._assemble_reward",
+      "source_line": 3216,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__assemble_reward",
+      "source_ast_sha256": "e1267aae6e95f3b2e6958c6e68db2abce4dddfe4faaabd52ba95b8f533dc253c",
+      "adapted_ast_sha256": "2b51fd97893fac913eaab2bb96bc18bd5dccb65e6945aa2bfd755dd8157262dc"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._empty_metrics",
+      "source_line": 3395,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__empty_metrics",
+      "source_ast_sha256": "494865815434bca3b8b8da0b868c919b83b80be385c04e08a4de987131165379",
+      "adapted_ast_sha256": "8e30f25d46d5b3b29d1ee80a54fd763d410027743eae1fb5d6ed812d2870e801"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._get_obs",
+      "source_line": 3239,
+      "destination": "observations/u13_kernels.py",
+      "function": "SchaftUnifiedJoystickV1__get_obs",
+      "source_ast_sha256": "d7fc729ca9b9dcfc91f6435a503e193a0f4f0ff584bfe10e660aba8776c83860",
+      "adapted_ast_sha256": "c5097a336e39d6dad97f329fa184c6329fae77e4da3717b036cf4c166286d594",
+      "pre_final_review_adapted_ast_sha256": "bcd0108034686fca84f7d10b315011e116d48802d9ebc3efa25ce4a638280171",
+      "final_review_change": "Docstring only; runtime statements unchanged."
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._reset_bout_local",
+      "source_line": 1994,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__reset_bout_local",
+      "source_ast_sha256": "38ce09ff8c9d882c6016dfd46f8730721df8184b967b5c62dbc4ff86bc95ad13",
+      "adapted_ast_sha256": "02363a451a5767936b7f76bcf3fc2191e106852b1992ee449044d5b154b7f8fe"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._strict_yaw_dc_metrics",
+      "source_line": 3759,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__strict_yaw_dc_metrics",
+      "source_ast_sha256": "a766e03a9c84e923618211c7676a0462bd1a35716351d8686a7afad863332f20",
+      "adapted_ast_sha256": "555e606b53627a490e4dc55e932fae4fd886189c01e589556422974840c40e85"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._u13_metrics",
+      "source_line": 3161,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__u13_metrics",
+      "source_ast_sha256": "ab7f6414f083f789a7a09f03e080280ad640d80c66d12d1a5808310f4a522af9",
+      "adapted_ast_sha256": "41e2b4e4d33ab3527a2d4b0d3ef08521cdad9742e2b35cca677981a80d16d1d7"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._u4_unified_metrics",
+      "source_line": 3634,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__u4_unified_metrics",
+      "source_ast_sha256": "cb359baeb75645e73c8d66a4aa812d61a5d8f004079db4aaae83895b63b579da",
+      "adapted_ast_sha256": "371a6e2b6ec324e3e1516164db00cd562a0adbfb36a3a63957c5c7ae82f62ba0"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._u6v10_accounting_metric_keys",
+      "source_line": 3542,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__u6v10_accounting_metric_keys",
+      "source_ast_sha256": "b45dde94594bf66e11267ddd8202bba1f3f4e67f98d5c1af464f01308c1f664b",
+      "adapted_ast_sha256": "655654c439e8f14cffb0f6f62d3239bd3ab25c81ab1886606b0c1528cc81803c"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._u6v10_accounting_metrics",
+      "source_line": 3064,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__u6v10_accounting_metrics",
+      "source_ast_sha256": "c59bffeeb4556780418704e744ecf1acaa60ced5dd8b3b98bb4da8c20e6a8d3e",
+      "adapted_ast_sha256": "87391d3469bba02de8a9ca071eb8c82f65aa2e5eab49ba1187ca292492fdfae5"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._u6v10_group_gate",
+      "source_line": 3057,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__u6v10_group_gate",
+      "source_ast_sha256": "3c004d0ccdcd127816521ee1cc9eb48faca29268e778ad1fc1960ec24c848c52",
+      "adapted_ast_sha256": "d5766fe31015fd3e2fab3b5cca0be692c7da0f110b1c24ea66ffef3f96bf5e6d"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._unified_components",
+      "source_line": 2131,
+      "destination": "rewards/unified_kernels.py",
+      "function": "SchaftUnifiedJoystickV1__unified_components",
+      "source_ast_sha256": "be329e2fd446cd4866e15363f46f8fda13b962b620239ef4feb729ad8541eecf",
+      "adapted_ast_sha256": "b07afe043586f9bbcc60b8add44468216b3353b8f0711e90406c57b157e97f0c"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._unified_metrics",
+      "source_line": 3589,
+      "destination": "evaluation/source_metrics.py",
+      "function": "SchaftUnifiedJoystickV1__unified_metrics",
+      "source_ast_sha256": "774f34451e0097a2e1d6454453e79aaeb098145586a736a042d647e9501cc958",
+      "adapted_ast_sha256": "3a154381799a0f3937b37e223f90bdeefdafb435d0a6541cef87476189b2bd16"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._v11_gait_core_components",
+      "source_line": 2823,
+      "destination": "rewards/unified_kernels.py",
+      "function": "SchaftUnifiedJoystickV1__v11_gait_core_components",
+      "source_ast_sha256": "47f434cb2c4a0d2077ab74dbfb9eb8c2ca6b820dd35d7f83fad281a8fd23a9f2",
+      "adapted_ast_sha256": "f00d5f93ce387061173d2887fd6e9eb67f89754fe403e174fff39c4537a93884"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._v11_metric_keys",
+      "source_line": 3504,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__v11_metric_keys",
+      "source_ast_sha256": "80682533696a3dcee65fdfc1695a8a7947e0f2967220354dd2fbc758210edb02",
+      "adapted_ast_sha256": "1bf4b3f9c3166472e17164f4f2af75c6bd427e2fdcecf4f9453bf2b4f2b7bc43"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._v11_potential_delta",
+      "source_line": 2804,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__v11_potential_delta",
+      "source_ast_sha256": "5784e2ec6f404dc513baba063d647bbcc3f0f506b2e332858d3960afcc8ab7d0",
+      "adapted_ast_sha256": "1b2c2efddd89aa250345ca96cd0af340fdfdff2d06e1e0cf14b06d56abfd711a"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1._write_back",
+      "source_line": 2020,
+      "destination": "environments/unified_helpers.py",
+      "function": "SchaftUnifiedJoystickV1__write_back",
+      "source_ast_sha256": "9ac0c650c158ee1581af447f03bab2b08429fea8210f7d295b96a55cb6172be9",
+      "adapted_ast_sha256": "60a06a4b25b156e71057b56788548838734d53508d6203f4ec503cf0b6006d30"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1.reset",
+      "source_line": 950,
+      "destination": "environments/u13_lifecycle.py",
+      "function": "SchaftUnifiedJoystickV1__reset",
+      "source_ast_sha256": "4c5149113e1fd710466c99031732f3ca4c66fd1b4ab540693bcfe06b2b69e7cd",
+      "adapted_ast_sha256": "4400f60e847441526b16513a7b933d61edb8be314ffb5a4210a76d2e2ce52929"
+    },
+    {
+      "source_file": "unified_v1.py",
+      "source_method": "SchaftUnifiedJoystickV1.step",
+      "source_line": 1145,
+      "destination": "environments/u13_lifecycle.py",
+      "function": "SchaftUnifiedJoystickV1__step",
+      "source_ast_sha256": "2661aab6f2dd42b47320c2a9e6fddf907d84ed43c70f6957b7d4ded0ccb6974b",
+      "adapted_ast_sha256": "2abd39881b4c5f5297da2a8a43cc86e8220aed471a84ef75fb9cd3156475b72a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "Walking._get_termination",
+      "source_line": 672,
+      "destination": "environments/shared_helpers.py",
+      "function": "Walking__get_termination",
+      "source_ast_sha256": "f83327b11dbff5b09db9a76805a40eb317862ec1be9464d7c93e469d9cd83059",
+      "adapted_ast_sha256": "2279fbc587cbc027985a77ef68c6e322c1af2c730928b77cc847fe267eab173a"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "Walking._post_init",
+      "source_line": 562,
+      "destination": "environments/setup.py",
+      "function": "Walking__post_init",
+      "source_ast_sha256": "471c587def26c6727fbe700154a26be33ce03d7fe6666e59f8a902ee76786e64",
+      "adapted_ast_sha256": "56a3f2df1a4f7f170262325d378726383a5e858be7e1b03d732139532ef88540"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "Walking._roll_pitch",
+      "source_line": 722,
+      "destination": "environments/shared_helpers.py",
+      "function": "Walking__roll_pitch",
+      "source_ast_sha256": "d5e6e123992c6842d66fc6eb13ea1846d5f759393110ea8c4eeada0d06715fef",
+      "adapted_ast_sha256": "8d3cb5cb95a29509920f838aa93249ca0c653e2bbea09963f96ef937c8737571"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "Walking._termination_flags",
+      "source_line": 733,
+      "destination": "environments/shared_helpers.py",
+      "function": "Walking__termination_flags",
+      "source_ast_sha256": "9c7a4cae7281f522bbb5c0f98be68a8239c4c18313a156d23a14fd725f6f31ca",
+      "adapted_ast_sha256": "f26c8147298d7733a5dc5b24a15b2e440d9a7b51b54ea0e15c7d635024a8ff0e"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW05._foot_contacts",
+      "source_line": 921,
+      "destination": "gait/contact_kernels.py",
+      "function": "WalkingW05__foot_contacts",
+      "source_ast_sha256": "b490fe4c2200f60033a75236471e3da002ca749f3a4d9ef29841069e198b4dd6",
+      "adapted_ast_sha256": "d524441512ed7ee3ae7f5a0d267f5773203e342bc5030024a2bbdebb7f4352c2"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW05._post_init",
+      "source_line": 848,
+      "destination": "environments/setup.py",
+      "function": "WalkingW05__post_init",
+      "source_ast_sha256": "39fab3a05b3b120ac67efa0c42c3955beeb1d33bea4d8f45fb40eee93e40f729",
+      "adapted_ast_sha256": "c461e88373a2af66f92c0a66c451411231e6c72f01c44a747fb5e93d557f482b"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW1._foot_motion",
+      "source_line": 1094,
+      "destination": "gait/contact_kernels.py",
+      "function": "WalkingW1__foot_motion",
+      "source_ast_sha256": "c0831891e6810b47c4d18293fa52d0fd43fd9808ca5a34c30befecf17a7d9e72",
+      "adapted_ast_sha256": "987894271ff875012d28b9f5450c88895ce08607ba1597f85da7a61ff0b1aa48"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW1._foot_positions",
+      "source_line": 1083,
+      "destination": "gait/contact_kernels.py",
+      "function": "WalkingW1__foot_positions",
+      "source_ast_sha256": "b5628e8286a607ee0c972994531d74698884d858271818be07a95af3743f0b3e",
+      "adapted_ast_sha256": "714bc095af3b2cb430a90e1f7c865a5106ac6d986f43894858540f032e93c2d9"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW1._get_privileged_obs",
+      "source_line": 1065,
+      "destination": "observations/v24_kernels.py",
+      "function": "WalkingW1__get_privileged_obs",
+      "source_ast_sha256": "c60b4a71a0b50a181b04cfc947687ba68b2ad6cb9017dbfeca7ddf4fedcc9037",
+      "adapted_ast_sha256": "975f80dfccd440cb416d551b29f52d79fa7c55363abd5593108063afe81966e5"
+    },
+    {
+      "source_file": "walking.py",
+      "source_method": "WalkingW1._post_init",
+      "source_line": 995,
+      "destination": "environments/setup.py",
+      "function": "WalkingW1__post_init",
+      "source_ast_sha256": "bcebaa3f04fb3da272cd2a5d239d3d800c1afa681f13eb5c47c16d9c5596ade3",
+      "adapted_ast_sha256": "2bc799297cfb1db3bd68da2b2251a0176f00d8189af6f95e036a2a47ceca5d23"
+    }
+  ],
+  "static_extraction_check": {
+    "matched_method_bodies_after_declared_adaptations": 98,
+    "separately_adapted_setup_methods": [
+      "FootUnloadV2._post_init",
+      "ResidualForwardWalkingV1._post_init",
+      "ResidualSteppingInPlaceV1._post_init",
+      "ResidualSteppingInPlaceV3._post_init",
+      "ResidualSteppingInPlaceV32._post_init",
+      "SchaftUnifiedJoystickV1.__init__",
+      "Walking._post_init",
+      "WalkingW05._post_init",
+      "WalkingW1._post_init"
+    ],
+    "unexpected_differences": [],
+    "scope": "AST equivalence under declared name/dispatch/metadata transformations; not physical parity."
+  }
+}

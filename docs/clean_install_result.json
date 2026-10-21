@@ -1,0 +1,119 @@
+{
+  "python": "3.12.12",
+  "interpreter": "standalone CPython; independent temporary venv; no system-site packages",
+  "environment_isolated": true,
+  "installed_wheel": "biped_locomotion_ppo-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "99f7883b7a2e0e4e004354b26687765460ee7c826c5445d0c29b073c4c7920a3",
+  "wheel_bytes": 130750,
+  "wheel_asset_check": "PASS",
+  "test_counts": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "scan_passed": true,
+  "package_code_data_match": true,
+  "simulation_or_training_run": false,
+  "commands": [
+    {
+      "check": "installed-wheel unit tests",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "pytest",
+        "$REPO/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=$JUNIT"
+      ]
+    },
+    {
+      "check": "synthetic smoke",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "$REPO/tools/smoke_test.py"
+      ]
+    },
+    {
+      "check": "v24_forward config-only CLI",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "$REPO/tools/train.py",
+        "--config",
+        "$REPO/configs/v24_forward.yaml"
+      ]
+    },
+    {
+      "check": "u13_scratch config-only CLI",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "$REPO/tools/train.py",
+        "--config",
+        "$REPO/configs/u13_scratch.yaml"
+      ]
+    },
+    {
+      "check": "dependency consistency",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-m",
+        "pip",
+        "check"
+      ]
+    },
+    {
+      "check": "static undefined names",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/ruff",
+        "check",
+        "--no-cache",
+        "--select",
+        "F821",
+        "$REPO/src",
+        "$REPO/tests",
+        "$REPO/tools"
+      ]
+    },
+    {
+      "check": "publication safety scan",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "$REPO/tools/scan_release.py"
+      ]
+    },
+    {
+      "check": "installed package and API identity",
+      "exit_code": 0,
+      "command": [
+        "$REVIEW_ENV/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "from pathlib import Path\nimport sys,json,importlib.metadata as md\nimport biped_locomotion\nfrom brax.training.agents.ppo import train as ppo\nfrom biped_locomotion.training.ppo_config import load_config\nimport inspect\nroot=Path(sys.argv[1]);installed=Path(biped_locomotion.__file__).parent\nassert installed.is_relative_to(Path(sys.prefix))\nassert not any(\"mujoco_playground\" in p for p in sys.path)\nfor p in (root/\"src/biped_locomotion\").rglob(\"*\"):\n if p.is_file() and p.suffix in (\".py\",\".json\"):\n  q=installed/p.relative_to(root/\"src/biped_locomotion\")\n  assert q.read_bytes()==p.read_bytes(),str(p)\nfor profile in (\"v24_forward\",\"u13_scratch\"):\n config=load_config(root/\"configs\"/(profile+\".yaml\"));assert not set(config.train_kwargs())-set(inspect.signature(ppo.train).parameters)\nprint(\"Installed package identity, complete code/data match, trainer import and config signatures PASS\")\n",
+        "$REPO"
+      ]
+    }
+  ],
+  "review_date": "2026-10-21",
+  "retained_runtime_modules_AST_unchanged": 22
+}

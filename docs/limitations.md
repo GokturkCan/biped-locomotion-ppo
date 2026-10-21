@@ -20,3 +20,8 @@
 
 - Final clean-environment validation covers the installed public package and synthetic kernels
   on CPU, not model physics. Dependency installation alone does not establish physical parity.
+
+- Native deployment: the C++ runtime and ONNX export are verified only on synthetic data here. The trained
+  ONNX weights, robot model and bindings are private, so closed-loop behaviour on the real robot model is
+  not reproducible from this repository. The GLFW viewer compiles but on-screen rendering is unverified,
+  the gamepad was tested only without a physical controller, and no hardware deployment is claimed.

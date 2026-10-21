@@ -1,5 +1,8 @@
 # Reproducibility
 
+Native C++/ONNX runtime (build and synthetic-data tests): see `native/v24_runtime/README.md`
+and `docs/native_deployment.md`; the Python side needs `pip install -e '.[test,deploy]'`.
+
 Public CPU checks:
 
 ```bash

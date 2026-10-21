@@ -25,4 +25,8 @@ An arbitrary 12-actuator model is not necessarily compatible with the reported e
 Exact compatibility requires private validation of coordinate conventions, contacts, initialization,
 settling, reference pose, limits, gains and observations.
 
+The native C++ runtime consumes a smaller JSON subset of the same bindings
+(`native/v24_runtime/bindings/runtime_bindings.template.json`): joint, sensor, geom and body names, action
+scales, initial `qpos` and the two root-height settings. See `docs/native_deployment.md`.
+
 Do not commit your ModelSpec, model files, runtime manifests, checkpoints or outputs.

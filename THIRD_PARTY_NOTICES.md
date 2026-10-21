@@ -16,7 +16,9 @@ created for this release edition. No robot-description license is granted here.
 
 NumPy, PyYAML, JAX, Flax, MuJoCo/MJX, Brax and ml-collections are external
 requirements, not vendored source or binaries. Preserve their own notices when
-redistributing dependency bundles. No Menagerie assets or ONNX Runtime are included.
+redistributing dependency bundles. No Menagerie assets or ONNX Runtime binaries are included. The native runtime under
+`native/v24_runtime/` links, but does not vendor, the MuJoCo C library, ONNX Runtime, SDL2, GLFW (optional)
+and OpenSSL; their licenses apply to any binaries you build or distribute.
 
 Before publication, the project owner must confirm ownership/permission for the
 research additions and approved aggregate findings. Author/citation metadata identify Göktürk Can.

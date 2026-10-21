@@ -235,13 +235,37 @@ src/biped_locomotion/
   training/        PPO profiles, initialization, checkpoint contract
   evaluation/      metrics, scenarios and qualification
   analysis/        generalized effort and reward accounting
+  deployment/      ONNX export and NumPy reference for the deterministic actor
 configs/           resolved public profiles
 results/           sanitized canonical aggregates
 examples/          synthetic contract demonstration
 tests/             public contract tests
-tools/            config, evaluation, smoke and scan entry points
+tools/            config, evaluation, smoke, scan and ONNX export entry points
+native/v24_runtime/ C++17 ONNX Runtime closed-loop runtime, bindings template, synthetic tests
 docs/             research methodology and validation records
 ```
+
+## Native C++ / ONNX deployment
+
+The repository also includes the deployment software that follows training, so the full chain is
+visible: **PPO/JAX → ONNX export → ONNX Runtime C++ → joystick command input → observation assembly →
+policy inference → residual joint-position command.**
+
+```mermaid
+flowchart LR
+    A["PPO / JAX"] --> B["ONNX export"] --> C["ONNX Runtime C++"]
+    J["Joystick command"] --> O["Observation assembly"] --> C
+    C --> R["Residual joint-position command"] --> S["MuJoCo step"] --> O
+```
+
+- **Included:** the 50 Hz C++ runtime (observation assembly, gait event machine, contact/GRF extraction,
+  action→target law, ONNX Runtime wrapper, SDL2 joystick, telemetry, artifact hash check), the ONNX export
+  code and a NumPy reference, and synthetic-data tests (15 CTest entries locally; an ONNX-free subset in CI).
+- **Not included:** the trained ONNX weights and checkpoint, the robot model, and all robot-specific values.
+  These enter through an external runtime-bindings JSON, so the deployment software can be inspected, built and
+  tested without the restricted robot. It is simulation/runtime integration; **no hardware deployment is claimed.**
+
+See [`native/v24_runtime/`](native/v24_runtime/README.md) and [Native deployment](docs/native_deployment.md).
 
 ## Quick start
 
@@ -298,6 +322,7 @@ acquisition and command tracking. Effort aggregates do not determine hardware mo
 | Acquisition and experiments | [Reward/FSM](docs/reward_design.md), [lineage](docs/experiment_lineage.md) |
 | Findings | [V24](docs/v24_forward_result.md), [U13](docs/u13_findings.md), [effort](docs/actuator_effort.md) |
 | Reproduction and scope | [Reproducibility](docs/reproducibility.md), [model access](docs/model_access.md), [limitations](docs/limitations.md) |
+| Deployment | [Native C++ / ONNX deployment](docs/native_deployment.md), [runtime README](native/v24_runtime/README.md) |
 | Release evidence | [Implementation mapping](docs/implementation_mapping.md), [technical review](docs/final_release_review.md), [assembly](docs/release_assembly.md) |
 
 ## References and attribution

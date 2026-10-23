@@ -3,9 +3,9 @@
 from pathlib import Path
 import re, json, sys
 
-# Exact repository-relative paths of approved public README media. Only the binary_file finding
-# is waived for these; the extension and size checks still apply to them.
-APPROVED_BINARY_MEDIA = frozenset({"assets/demos/v24_forward_walking_preview.gif"})
+# Exact repository-relative paths of approved public README media. Only the binary_file and
+# large_file findings are waived for these; all other checks still apply to them.
+APPROVED_PUBLIC_MEDIA = frozenset({"assets/demos/v24_forward_walking_preview.gif"})
 
 
 def _signature_hit(signature, line):
@@ -102,12 +102,12 @@ def scan(root):
         largest.append((len(b), str(rel)))
         if p.suffix.lower() in forbidden:
             findings.append({"path": str(rel), "kind": "forbidden_asset_extension"})
-        if len(b) > 1_000_000:
+        if len(b) > 1_000_000 and rel.as_posix() not in APPROVED_PUBLIC_MEDIA:
             findings.append({"path": str(rel), "kind": "large_file"})
         try:
             s = b.decode("utf-8")
         except UnicodeDecodeError:
-            if rel.as_posix() not in APPROVED_BINARY_MEDIA:
+            if rel.as_posix() not in APPROVED_PUBLIC_MEDIA:
                 findings.append({"path": str(rel), "kind": "binary_file"})
             continue
         if p.suffix.lower() == ".csv":

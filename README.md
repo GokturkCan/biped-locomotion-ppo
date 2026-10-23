@@ -34,7 +34,7 @@ event-based reward shaping, and quantitative forward-locomotion evaluation in Mu
 <td align="center"><b>V24 — PPO Forward Locomotion</b></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/demos/v24_forward_walking_preview.gif" alt="V24 PPO forward locomotion preview in MuJoCo/MJX" width="100%"></td>
+<td align="center"><img src="assets/demos/v24_forward_walking_preview.gif" alt="V24 PPO forward locomotion preview in MuJoCo/MJX" width="640"></td>
 </tr>
 <tr>
 <td>Canonical V24 forward-walking result, shown as a 5 s simulation preview in MuJoCo/MJX. Simulation only; the quantitative evaluation is reported below.</td>

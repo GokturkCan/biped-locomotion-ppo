@@ -27,7 +27,11 @@ event-based reward shaping, and quantitative forward-locomotion evaluation in Mu
 > URDF/MJCF is intentionally excluded. Public tests validate software contracts, not the
 > exact physical result. U13 is a secondary negative command-tracking finding.
 
-<!-- Approved V24 media can be inserted here later, with checkpoint, horizon and approval context. -->
+### V24 Forward Walking Demo
+
+[▶ Watch the 25 s V24 simulation demo](media/v24_forward_walking_demo.mp4)
+
+Simulation demo of the canonical V24 forward-walking result in MuJoCo/MJX. Simulation only; no hardware deployment is shown or claimed.
 
 ## Research question
 

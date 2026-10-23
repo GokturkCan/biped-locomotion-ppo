@@ -21,3 +21,4 @@ logs/
 *.npz
 *.onnx
 *.mp4
+!media/v24_forward_walking_demo.mp4
